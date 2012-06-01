@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="Configuration_Utility.Sensor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="600" Height="auto" Width="auto">
+    <Grid>
+        <Border Margin="5" Padding="2" Background="WhiteSmoke"
+          BorderBrush="SteelBlue" BorderThickness="3,5,3,5" CornerRadius="3"
+          VerticalAlignment="Top">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
+
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Height="26" Width="66" Content="TUIO Port"/>
+                        <TextBox Name="tuio_port" Width="50" Height="26" />
+                    </StackPanel>
+                    <Border Width="20" Height="20"/>
+                    <CheckBox Content="Invert Horizontal" Name="invert_horizontal"/>
+                    <Border Width="20" Height="10"/>
+                    <CheckBox Content="Invert Verticle" Name="invert_verticle"/>
+                    <Border Width="20" Height="10"/>
+                    <CheckBox Content="Enable Visual Feedback" Name="visual_feedback"/>
+                </StackPanel>
+                <Border Width="30" />
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Content="Configure Offset" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    <Rectangle Height="237" HorizontalAlignment="Center" Name="rectangle" Stroke="#FF413737" VerticalAlignment="Center" Width="257" />
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Xo" />
+                        <TextBox Width="50" Name="x_offset" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Yo" />
+                        <TextBox Width="50" Name="y_offset" />
+                    </StackPanel>
+
+                </StackPanel>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>
