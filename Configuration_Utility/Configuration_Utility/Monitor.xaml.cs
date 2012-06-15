@@ -19,9 +19,14 @@ namespace Configuration_Utility
     /// </summary>
     public partial class Monitor : UserControl
     {
+        SolidColorBrush SBorderBrush = new SolidColorBrush(Colors.AliceBlue);
+       // bool Active = false;
         public Monitor()
         {
             InitializeComponent();
+            
         }
+
+
     }
 }

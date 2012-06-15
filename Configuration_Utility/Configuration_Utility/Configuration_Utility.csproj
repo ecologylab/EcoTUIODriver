@@ -38,6 +38,9 @@
   <PropertyGroup>
     <ApplicationIcon>Configuration_Utility.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MahApps.Metro">
       <HintPath>..\packages\MahApps.Metro.0.8.0.0\lib\net40\MahApps.Metro.dll</HintPath>
@@ -60,6 +63,7 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -69,9 +73,22 @@
     <Compile Include="Monitor.xaml.cs">
       <DependentUpon>Monitor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="OSC.NET\OSCBundle.cs" />
+    <Compile Include="OSC.NET\OSCMessage.cs" />
+    <Compile Include="OSC.NET\OSCPacket.cs" />
+    <Compile Include="OSC.NET\OSCReceiver.cs" />
+    <Compile Include="OSC.NET\OSCTransmitter.cs" />
     <Compile Include="Sensor.xaml.cs">
       <DependentUpon>Sensor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="TUIO\TuioClient.cs" />
+    <Compile Include="TUIO\TuioContainer.cs" />
+    <Compile Include="TUIO\TuioCursor.cs" />
+    <Compile Include="TUIO\TuioListener.cs" />
+    <Compile Include="TUIO\TuioObject.cs" />
+    <Compile Include="TUIO\TuioPoint.cs" />
+    <Compile Include="TUIO\TuioTime.cs" />
     <Compile Include="Utils\ScreenUtil.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -113,6 +130,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

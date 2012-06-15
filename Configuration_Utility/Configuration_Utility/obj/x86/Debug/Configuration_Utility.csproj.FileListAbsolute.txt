@@ -17,3 +17,4 @@ C:\Users\Rajat\Documents\Visual Studio 2010\Projects\Configuration_Utility\Confi
 C:\Users\Rajat\Documents\Visual Studio 2010\Projects\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Sensor.g.cs
 C:\Users\Rajat\Documents\Visual Studio 2010\Projects\Configuration_Utility\Configuration_Utility\bin\Debug\MahApps.Metro.dll
 C:\Users\Rajat\Documents\Visual Studio 2010\Projects\Configuration_Utility\Configuration_Utility\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Rajat\Documents\Visual Studio 2010\Projects\Configuration_Utility\Configuration_Utility\bin\Debug\Configuration_Utility.exe.config

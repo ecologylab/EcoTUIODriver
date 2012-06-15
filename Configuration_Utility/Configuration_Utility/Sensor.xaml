@@ -3,37 +3,40 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="600" Height="auto" Width="auto">
+             mc:Ignorable="d" Background="WhiteSmoke" 
+             HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Visibility="Collapsed" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" >
     <Grid>
-        <Border Margin="5" Padding="2" Background="WhiteSmoke"
-          BorderBrush="SteelBlue" BorderThickness="3,5,3,5" CornerRadius="3"
-          VerticalAlignment="Top">
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Horizontal">
 
-                <StackPanel Orientation="Vertical">
+        <Border  Margin="5" Padding="2" Background="WhiteSmoke"
+          BorderBrush="SteelBlue" BorderThickness="3,5,3,5" CornerRadius="3">
+        <StackPanel Orientation="Horizontal">
+                <Border Width="20"/>
+                <StackPanel  Orientation="Vertical">
                     <StackPanel Orientation="Horizontal">
-                        <Label Height="26" Width="66" Content="TUIO Port"/>
-                        <TextBox Name="tuio_port" Width="50" Height="26" />
+                        <Label FontSize="18" Content="TUIO Port"/>
+                        <TextBox FontSize="18" TextChanged="tuio_port_TextChanged" Name="tuio_port" DataContext="{Binding}" Width="94" />
                     </StackPanel>
                     <Border Width="20" Height="20"/>
-                    <CheckBox Content="Invert Horizontal" Name="invert_horizontal"/>
+                    <CheckBox VerticalAlignment="Top" HorizontalAlignment="Left"  Click="invert_horizontal_Click" FontSize="18" Content="Invert Horizontal" Name="invert_horizontal"/>
                     <Border Width="20" Height="10"/>
-                    <CheckBox Content="Invert Verticle" Name="invert_verticle"/>
+                    <CheckBox HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Click="invert_verticle_Click" Content="Invert Verticle" Name="invert_verticle"/>
                     <Border Width="20" Height="10"/>
-                    <CheckBox Content="Enable Visual Feedback" Name="visual_feedback"/>
                 </StackPanel>
                 <Border Width="30" />
-                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Label Content="Configure Offset" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                    <Rectangle Height="237" HorizontalAlignment="Center" Name="rectangle" Stroke="#FF413737" VerticalAlignment="Center" Width="257" />
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="Xo" />
-                        <TextBox Width="50" Name="x_offset" />
+                <StackPanel Orientation="Vertical" Name="stack" >
+                    <Label Content="Configure Offset" FontSize="18"  />
+                    <Border x:Name="CanvasBorder" BorderThickness="1"  BorderBrush="Black">
+
+                        <Canvas Width="300" Height="300" Name="VisualFeedback">
+                         </Canvas>
+                    </Border>
+                        <StackPanel Orientation="Horizontal">
+                        <Label Content="Xo" FontSize="18"  />
+                        <TextBox TextChanged="x_offset_TextChanged" Width="84" Name="x_offset" />
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="Yo" />
-                        <TextBox Width="50" Name="y_offset" />
+                    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Orientation="Horizontal">
+                        <Label Content="Yo" FontSize="18"  />
+                        <TextBox TextChanged="y_offset_TextChanged" Width="85" Name="y_offset" />
                     </StackPanel>
 
                 </StackPanel>

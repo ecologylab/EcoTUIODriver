@@ -17,3 +17,4 @@ C:\Users\Rajat\Documents\Visual Studio 2010\Projects\Configuration_Utility\Confi
 C:\Users\Rajat\Documents\Visual Studio 2010\Projects\Configuration_Utility\Configuration_Utility\obj\x86\Release\GenerateResource.write.1.tlog
 C:\Users\Rajat\Documents\Visual Studio 2010\Projects\Configuration_Utility\Configuration_Utility\obj\x86\Release\Configuration_Utility.exe
 C:\Users\Rajat\Documents\Visual Studio 2010\Projects\Configuration_Utility\Configuration_Utility\obj\x86\Release\Configuration_Utility.pdb
+C:\Users\Rajat\Documents\Visual Studio 2010\Projects\Configuration_Utility\Configuration_Utility\bin\Release\Configuration_Utility.exe.config
