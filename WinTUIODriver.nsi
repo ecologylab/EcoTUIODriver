@@ -110,14 +110,14 @@ Section "Driver and Configuration Utility"
   SetOutPath "C:\Users\AppData\TUIO-To-Vmulti\Data"
   File /r "Data"
 
-
+  SetOutPath $INSTDIR
 
 
 ;cmd related to 64bit or 32bit driver .
   ${If} $driverversion_32 == "true"
-	   Execwait "$INSTDIR\vmulti-x64\Installvmulti.cmd"
+	   Execwait "$INSTDIR\vmulti-x86\Installvmulti.cmd"
   ${Else}
-           Execwait "$INSTDIR\Vmulti-x86\Installvmulti.cmd"
+           Execwait "$INSTDIR\Vmulti-x64\Installvmulti.cmd"
   ${EndIf}
 
 SectionEnd
