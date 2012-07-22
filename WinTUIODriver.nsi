@@ -102,12 +102,18 @@ Section "Driver and Configuration Utility"
         File /r "vmulti-x64"
         File /r "vmulti-x86"
         File /r "Executables"
-      
+ 
   WriteUninstaller "$INSTDIR\Uninstall-WinTuioDriver.exe"
+  SetOutPath "$INSTDIR\Executables"
+  
   CreateShortCut "$SMPROGRAMS\Startup\WinTUIODriver.lnk" "$INSTDIR\Executables\Configuration_Utility.exe"
   CreateShortCut "$SMPROGRAMS\WinTUIODriver.lnk" "$INSTDIR\Executables\Configuration_Utility.exe"
+
+  SetOutPath $INSTDIR
   CreateShortCut "$SMPROGRAMS\Uninstall-WinTuioDriver.lnk" "$INSTDIR\Uninstall-WinTuioDriver.exe"
+  
   SetOutPath "C:\Users\AppData\TUIO-To-Vmulti\Data"
+  
   File /r "Data"
 
   SetOutPath $INSTDIR
