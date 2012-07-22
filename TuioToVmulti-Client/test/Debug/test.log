@@ -1,0 +1,21 @@
+﻿Build started 7/22/2012 6:20:21 PM.
+     1>Project "E:\ecology-lab\ecologylab-WinTUIODriver-375775c\TuioToVmulti-Client\test\test.vcxproj" on node 3 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\test.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+         All outputs are up-to-date.
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         All outputs are up-to-date.
+       Manifest:
+         All outputs are up-to-date.
+       FinalizeBuildStatus:
+         Deleting file "Debug\test.unsuccessfulbuild".
+         Touching "Debug\test.lastbuildstate".
+     1>Done Building Project "E:\ecology-lab\ecologylab-WinTUIODriver-375775c\TuioToVmulti-Client\test\test.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.12

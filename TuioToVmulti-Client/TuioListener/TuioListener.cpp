@@ -1,125 +1,135 @@
+//#include "stdafx.h"
 #include <windows.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "TuioDump.h"
 #include <vector>
+#include "ServiceInstaller.h"
+#include "ServiceBase.h"
+#include "TUIOService.h"
+#include "Global.h"
+#include <atlconv.h>
+#include <atlbase.h>
+#include <wchar.h>
+#include <locale.h>
+#include "iostream"
+#include <fstream>
+#include <iostream>
 
- extern "C" 
- {
-   #include "vmulticlient.h"
- }
-		
- using namespace std;
-
-void SendHidRequests_touchdown(pvmulti_client vmulti,BYTE requestType,int contact_id,float x,float y);
-void SendHidRequests_touchup(pvmulti_client vmulti,BYTE requestType,int contact_id,float x,float y);
-pvmulti_client vmulti;
-BYTE   reportId = REPORTID_MTOUCH;
-
-void TuioDump::addTuioObject(TuioObject *tobj) {
-	std::cout << "add obj " << tobj->getSymbolID() << " (" << tobj->getSessionID() << ") "<< tobj->getX() << " " << tobj->getY() << " " << tobj->getAngle() << std::endl;
-	vmulti_disconnect(vmulti);
-    vmulti_free(vmulti);
-	
-}
-
-void TuioDump::updateTuioObject(TuioObject *tobj) {
-	std::cout << "set obj " << tobj->getSymbolID() << " (" << tobj->getSessionID() << ") "<< tobj->getX() << " " << tobj->getY() << " " << tobj->getAngle() 
-				<< " " << tobj->getMotionSpeed() << " " << tobj->getRotationSpeed() << " " << tobj->getMotionAccel() << " " << tobj->getRotationAccel() << std::endl;
-}
-
-void TuioDump::removeTuioObject(TuioObject *tobj) {
-	std::cout << "del obj " << tobj->getSymbolID() << " (" << tobj->getSessionID() << ")" << std::endl;
-}
-
-void TuioDump::addTuioCursor(TuioCursor *tcur) {
-	std::cout << "add cur " << tcur->getCursorID() << " (" <<  tcur->getSessionID() << ") " << tcur->getX() << " " << tcur->getY() << std::endl;
-	SendHidRequests_touchdown(vmulti,reportId,tcur->getCursorID() ,tcur->getX(),tcur->getY());
-}
-
-void TuioDump::updateTuioCursor(TuioCursor *tcur) {
-	std::cout << "set cur " << tcur->getCursorID() << " (" <<  tcur->getSessionID() << ") " << tcur->getX() << " " << tcur->getY() 
-				<< " " << tcur->getMotionSpeed() << " " << tcur->getMotionAccel() << " " << std::endl;
-	SendHidRequests_touchdown(vmulti,reportId,tcur->getCursorID() ,tcur->getX(),tcur->getY());
-}
-
-void TuioDump::removeTuioCursor(TuioCursor *tcur) {
-	std::cout << "del cur " << tcur->getCursorID() << " (" <<  tcur->getSessionID() << ")" << std::endl;
-	SendHidRequests_touchup(vmulti, reportId,tcur->getCursorID(),tcur->getX(),tcur->getY());
-		
-}
-
-void  TuioDump::refresh(TuioTime frameTime) {
-	//std::cout << "refresh " << frameTime.getTotalMilliseconds() << std::endl;
-}
-
-
-void SendHidRequests_touchdown(pvmulti_client vmulti,BYTE requestType,int contact_id,float x,float y)
-{
-	
-		        PTOUCH pTouch = (PTOUCH)malloc(1 * sizeof(TOUCH));
-                pTouch[0].ContactID = contact_id;
-                pTouch[0].Status = MULTI_CONFIDENCE_BIT | MULTI_IN_RANGE_BIT | MULTI_TIPSWITCH_BIT;
-				
-                pTouch[0].XValue = USHORT(x * (int)MULTI_MAX_COORDINATE);
-                pTouch[0].YValue = USHORT(y * (int)MULTI_MAX_COORDINATE);
-				std::cout << USHORT(x * (int)MULTI_MAX_COORDINATE) <<std::endl;
-				std::cout << USHORT(y * (int)MULTI_MAX_COORDINATE) <<std::endl;
-				pTouch[0].Width = 20;
-                pTouch[0].Height = 30;
-
-				if (!vmulti_update_multitouch(vmulti, pTouch, 1))
-				printf("TOUCH_DOWN FAILED\N");
-				free(pTouch);
-    
-}
-
-void SendHidRequests_touchup(pvmulti_client vmulti,BYTE requestType,int contact_id,float x,float y)
-{
-	PTOUCH pTouch = (PTOUCH)malloc(1 * sizeof(TOUCH));
-    pTouch[0].ContactID = contact_id;
-	pTouch[0].XValue = USHORT(x * (int)MULTI_MAX_COORDINATE);
-    pTouch[0].YValue = USHORT(y * (int)MULTI_MAX_COORDINATE);
-	pTouch[0].Width = 20;
-    pTouch[0].Height = 30;
-	pTouch[0].Status = 0;
-	if (!vmulti_update_multitouch(vmulti, pTouch, 1))
-    printf("TOUCH_UP FAILED\n");
-	free(pTouch);
-}
-
-int main(int argc, char* argv[])
-{
-	//declare the client
-	std::cout << "Minimum coordinate on screen is " << MULTI_MIN_COORDINATE << std::endl;
-    std::cout << "Maximum coordinate on screen is " << MULTI_MAX_COORDINATE << std::endl;
-    vmulti = vmulti_alloc();
-
+   using namespace std;
  
-    if (!vmulti_connect(vmulti))
-    {
-        vmulti_free(vmulti);
-       
-    }
-	
-    printf("...sending request(s) to our device\n");
     
-	if( argc >= 2 && strcmp( argv[1], "-h" ) == 0 ){
-        	std::cout << "usage: TuioDump [port]\n";
-        	return 0;
-	}
-	int port = 3333;
-	if (argc == 1)
-    {
-     port = (int)argv[1];
-	}
-	if( argc >= 2 ) port = atoi( argv[1] );
-	
-	TuioDump dump;
-	TuioClient client(port);
-	client.addTuioListener(&dump);
-	client.connect(true);
+ 
+   // Service start options. 
+   #define SERVICE_START_TYPE       SERVICE_AUTO_START 
+ 
+ 
+   // List of service dependencies - "dep1\0dep2\0\0" 
+   #define SERVICE_DEPENDENCIES     L"" 
+ 
+ 
+   // The name of the account under which the service should run 
+   #define SERVICE_ACCOUNT          L".\\LocalSystem" 
+ 
+ 
+   // The password to the service account name 
+   #define SERVICE_PASSWORD         NULL 
 
+wchar_t *SERVICE_NAME;
+wchar_t *SERVICE_DISPLAY_NAME;
+int TUIO_PORT;
+int SERVICE_ID;
+int _tmain(int argc, _TCHAR *argv[])
+{
+//	getchar();
+	if (argc > 2)
+    {
+		
+    
+ 			if (argc >3)TUIO_PORT = _tstoi( argv[3] );
+		    SERVICE_ID = _tstoi(argv[2]);
+			if(SERVICE_ID ==1 ){
+				SERVICE_NAME = L"Tuio-To-vmulti-Device1" ;
+				SERVICE_DISPLAY_NAME = L"Tuio-To-vmulti-Device1" ;
+				 std::ofstream fs("D:\\tuioport1.txt"); 
+				 fs<<TUIO_PORT;
+				 fs.close();	 
+				 
+			}
+			else if(SERVICE_ID ==2)
+			{
+				SERVICE_NAME = L"Tuio-To-vmulti-Device2" ;
+				SERVICE_DISPLAY_NAME = L"Tuio-To-vmulti-Device2" ;
+				 std::ofstream fs("tuioport2.txt"); 
+				 fs<<TUIO_PORT;
+				 fs.close();
+			}
+			else if(SERVICE_ID ==3)
+			{
+				SERVICE_NAME = L"Tuio-To-vmulti-Device3" ;
+				SERVICE_DISPLAY_NAME = L"Tuio-To-vmulti-Device3" ;
+				 std::ofstream fs("tuioport3.txt"); 
+				 fs<<TUIO_PORT;
+				 fs.close();
+			}
+			else if(SERVICE_ID ==4)
+			{
+				SERVICE_NAME = L"Tuio-To-vmulti-Device4" ;
+				SERVICE_DISPLAY_NAME = L"Tuio-To-vmulti-Device4" ;
+			    std::ofstream fs("tuioport4.txt"); 
+				 fs<<TUIO_PORT;
+				 fs.close();
+			}
+			else if(SERVICE_ID ==5)
+			{
+				SERVICE_NAME = L"Tuio-To-vmulti-Device5" ;
+				SERVICE_DISPLAY_NAME = L"Tuio-To-vmulti-Device5" ;
+			    std::ofstream fs("tuioport5.txt"); 
+				 fs<<TUIO_PORT;
+				 fs.close();
+			}
+
+		if(argc > 3 && _tcscmp( _T("install"), argv[1] ) == 0 )
+        {
+			
+            // Install the service when the command is 
+            // "-install" or "/install".
+            InstallService(
+                SERVICE_NAME,               // Name of service
+                SERVICE_DISPLAY_NAME,       // Name to display
+                SERVICE_START_TYPE,         // Service start type
+                SERVICE_DEPENDENCIES,       // Dependencies
+                SERVICE_ACCOUNT,            // Service running account
+                SERVICE_PASSWORD            // Password of the account
+                );     
+		}
+        else if (argc > 2 &&_tcscmp( argv[1], _T("remove")) == 0)
+        {
+            // Uninstall the service when the command is 
+            // "-remove" or "/remove".
+			
+            UninstallService(SERVICE_NAME);
+        }
+		else{
+		wprintf(L"Parameters:\n");
+		wprintf(L" -remove   to remove the service.\n");
+        wprintf(L" -install  to install the service.\n");
+		}
+    }
+    else
+    {
+        wprintf(L"Parameters:\n");
+        wprintf(L" -install  to install the service.\n");
+        wprintf(L" -remove   to remove the service.\n");
+
+        CSampleService service(SERVICE_NAME);
+        if (!CServiceBase::Run(service))
+        {
+            wprintf(L"Service failed to run w/err 0x%08lx\n", GetLastError());
+        }
+    }
+ 
+	
 	return 0;
 }
 

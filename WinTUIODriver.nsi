@@ -66,12 +66,12 @@ Function pre
 	nsDialogs::Create 1018
 		Pop $dialog
 
-	${NSD_CreateRadioButton} 0 0 40% 6% "x86"
+	${NSD_CreateRadioButton} 0 0 40% 6% "x64"
 		Pop $hwnd
 		${NSD_AddStyle} $hwnd ${WS_GROUP}
 		${NSD_SetUserData} $hwnd "false"
 		${NSD_OnClick} $hwnd RadioClick
-	${NSD_CreateRadioButton} 0 12% 40% 6% "x64"
+	${NSD_CreateRadioButton} 0 12% 40% 6% "x86"
 		Pop $hwnd
 		${NSD_SetUserData} $hwnd "true"
 		${NSD_OnClick} $hwnd RadioClick
@@ -88,35 +88,44 @@ Function post
 	${If} $driverversion_32 == ""
 	    MessageBox MB_OK "Please select your machine type"
 	    Abort
-	${ElseIf} $driverversion_32 == true
+	${ElseIf} $driverversion_32 == "true"
             MessageBox MB_OK "Installation will install the driver for 32bit version of windows"
-            
         ${Else}
-	    MessageBox MB_OK "Installation will install the driver for 32bit version of windows"
+	    MessageBox MB_OK "Installation will install the driver for 64bit version of windows"
 	${EndIf}
 FunctionEnd
 
 Section "Driver and Configuration Utility"
   SetOutPath $INSTDIR
 
-        File /r "Configuration_Utility"
-        File /r "TuioToVmulti-Client"
-        File /r "Vmulti-Driver"
-  
+        
+        File /r "vmulti-x64"
+        File /r "vmulti-x86"
+        File /r "Executables"
+      
   WriteUninstaller "$INSTDIR\Uninstall-WinTuioDriver.exe"
-  CreateShortCut "$SMPROGRAMS\Startup\WinTUIODriver.lnk" "$INSTDIR\Configuration_Utility\Configuration_Utility\bin\Release\Configuration_Utility.exe"
-  CreateShortCut "$SMPROGRAMS\WinTUIODriver.lnk" "$INSTDIR\Configuration_Utility\Configuration_Utility\bin\Release\Configuration_Utility.exe"
+  CreateShortCut "$SMPROGRAMS\Startup\WinTUIODriver.lnk" "$INSTDIR\Executables\Configuration_Utility.exe"
+  CreateShortCut "$SMPROGRAMS\WinTUIODriver.lnk" "$INSTDIR\Executables\Configuration_Utility.exe"
+  CreateShortCut "$SMPROGRAMS\Uninstall-WinTuioDriver.lnk" "$INSTDIR\Uninstall-WinTuioDriver.exe"
+  SetOutPath "C:\Users\AppData\TUIO-To-Vmulti\Data"
+  File /r "Data"
+
+
+
+
 ;cmd related to 64bit or 32bit driver .
-  ${If} $driverversion_32 == true
-	  ;  Execwait $INSTDIR\Vmulti-Driver\Installvmulti.cmd
+  ${If} $driverversion_32 == "true"
+	   Execwait "$INSTDIR\vmulti-x64\Installvmulti.cmd"
   ${Else}
-          ;  Execwait $INSTDIR\Vmulti-Driver\Installvmulti.cmd
+           Execwait "$INSTDIR\Vmulti-x86\Installvmulti.cmd"
   ${EndIf}
 
 SectionEnd
 
 Section "Source"
-
+ SetOutPath $INSTDIR
+        File /r "Configuration_Utility"
+        File /r "TuioToVmulti-Client"
 
 SectionEnd
 

@@ -1,20 +1,17 @@
-﻿Build started 6/14/2012 2:28:09 AM.
-     1>Project "C:\WinTUIODriver\WinTUIODriver\TuioToVmulti-Client\Vmulti_Client\vmulticlient.vcxproj" on node 2 (rebuild target(s)).
-     1>_PrepareForClean:
-         Deleting file "Debug\vmulticlient.lastbuildstate".
-       InitializeBuildStatus:
+﻿Build started 7/22/2012 6:20:21 PM.
+     1>Project "E:\ecology-lab\ecologylab-WinTUIODriver-375775c\TuioToVmulti-Client\Vmulti_Client\vmulticlient.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
          Creating "Debug\vmulticlient.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:\WinDDK\7600.16385.1\inc\ddk /IC:\WinDDK\7600.16385.1\inc\api /IC:\WinDDK\7600.16385.1\inc\crt /I..\inc /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /X /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt client.c
-         client.c
+         All outputs are up-to-date.
        Lib:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"C:\WinTUIODriver\WinTUIODriver\TuioToVmulti-Client\Debug\vmulticlient.lib" /NOLOGO Debug\client.obj
-         vmulticlient.vcxproj -> C:\WinTUIODriver\WinTUIODriver\TuioToVmulti-Client\Debug\vmulticlient.lib
+         All outputs are up-to-date.
+         vmulticlient.vcxproj -> E:\ecology-lab\ecologylab-WinTUIODriver-375775c\TuioToVmulti-Client\Debug\vmulticlient.lib
        FinalizeBuildStatus:
          Deleting file "Debug\vmulticlient.unsuccessfulbuild".
          Touching "Debug\vmulticlient.lastbuildstate".
-     1>Done Building Project "C:\WinTUIODriver\WinTUIODriver\TuioToVmulti-Client\Vmulti_Client\vmulticlient.vcxproj" (rebuild target(s)).
+     1>Done Building Project "E:\ecology-lab\ecologylab-WinTUIODriver-375775c\TuioToVmulti-Client\Vmulti_Client\vmulticlient.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.41
+Time Elapsed 00:00:00.12

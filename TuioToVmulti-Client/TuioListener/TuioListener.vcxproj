@@ -22,7 +22,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <CharacterSet>MultiByte</CharacterSet>
+    <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -58,11 +58,11 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;ENDIANESS=OSC_HOST_LITTLE_ENDIAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PrecompiledHeader>
       </PrecompiledHeader>
       <WarningLevel>Level2</WarningLevel>
-      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
       <AdditionalDependencies>hid.lib;setupapi.lib;ws2_32.lib;WINMM.LIB;%(AdditionalDependencies)</AdditionalDependencies>
@@ -74,6 +74,9 @@
       <TargetMachine>MachineX86</TargetMachine>
       <AdditionalLibraryDirectories>C:\WinDDK\7600.16385.1\lib\wxp\i386;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>copy app.config "$(TargetPath).config"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -97,6 +100,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="TUIOService.cpp" />
+    <ClCompile Include="ServiceBase.cpp" />
+    <ClCompile Include="ServiceInstaller.cpp" />
     <ClCompile Include="TuioListener.cpp" />
     <ClCompile Include="TUIO\TuioClient.cpp" />
     <ClCompile Include="TUIO\TuioTime.cpp" />
@@ -107,6 +113,10 @@
     <ClCompile Include="oscpack\ip\win32\UdpSocket.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="TUIOService.h" />
+    <ClInclude Include="ServiceBase.h" />
+    <ClInclude Include="ServiceInstaller.h" />
+    <ClInclude Include="ThreadPool.h" />
     <ClInclude Include="TuioDump.h" />
     <ClInclude Include="oscpack\ip\NetworkingUtils.h" />
     <ClInclude Include="oscpack\osc\OscException.h" />
@@ -128,6 +138,13 @@
     <ProjectReference Include="..\Vmulti_Client\vmulticlient.vcxproj">
       <Project>{ca3f49ef-f69c-46a0-a6bf-84f477255a5c}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

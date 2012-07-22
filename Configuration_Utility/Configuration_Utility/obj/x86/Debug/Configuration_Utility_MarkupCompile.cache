@@ -1,19 +1,19 @@
 ﻿Configuration_Utility
 
 
-winexe
+exe
 C#
 .cs
-C:\Users\Rajat\Documents\Visual Studio 2010\Projects\Configuration_Utility\Configuration_Utility\obj\x86\Debug\
+E:\ecology-lab\ecologylab-WinTUIODriver-375775c\Configuration_Utility\Configuration_Utility\obj\x86\Debug\
 Configuration_Utility
 none
 false
 DEBUG;TRACE
-C:\Users\Rajat\Documents\Visual Studio 2010\Projects\Configuration_Utility\Configuration_Utility\App.xaml
+E:\ecology-lab\ecologylab-WinTUIODriver-375775c\Configuration_Utility\Configuration_Utility\App.xaml
 3581358427
 
 22-1209410324
-171347584315
+19-87386685
 MainWindow.xaml;Monitor.xaml;Sensor.xaml;
 
 False
