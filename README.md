@@ -34,3 +34,6 @@ If you used the installer , the configuration utility will automatically be adde
 ![ "Screenshot" ](http://img802.imageshack.us/img802/504/wintuiodriver.png)
 				
 Start the service to convert TUIO events to windows touch events . 
+
+
+***Important Note : The configuration utlity supports 5 multiple monitor and 5 multiple touch sensor but multiple sensors are not supported by the driver yet , so this will work only for single monitor . 
