@@ -31,6 +31,6 @@ Diver to convert tuio touch events into windows touch events. Started as GSoC 20
 
 If you used the installer , the configuration utility will automatically be added in your startmenu and startup . Ohterwise you can manually locate it at $INSALL_DIR/executables/Configuration/Configuration_Utility.exe
 
-![ Screenshot ](http://img802.imageshack.us/img802/504/wintuiodriver.png)
+![Screenshot|align=center](http://img802.imageshack.us/img802/504/wintuiodriver.png)
 				
 Start the service to convert TUIO events to windows touch events . 
