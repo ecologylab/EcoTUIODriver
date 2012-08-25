@@ -1,0 +1,484 @@
+BUILD: Computing Include file dependencies:
+BUILD: Examining e:\18aug\vmulti5 directory tree for files to compile.
+oacr invalidate root:amd64fre /autocleanqueue
+1>Building generated files in e:\18aug\vmulti5\sys *************
+1>'nmake.exe /nologo BUILDMSG=Stop. -i BUILD_PASS=PASS0 NOLINK=1 PASS0ONLY=1 MAKEDIR_RELATIVE_TO_BASEDIR='
+1>BUILDMSG: Processing e:\18aug\vmulti5\sys
+1> copy .\vmultie.inx e:\18aug\vmulti5\sys\objfre_win7_amd64\amd64\vmultie.inf
+1> 1 file(s) copied.
+1> stampinf -f e:\18aug\vmulti5\sys\objfre_win7_amd64\amd64\vmultie.inf -a AMD64 -k 1.9
+1>Using version information from C:\WinDDK\7600.16385.1\inc\api\ntverp.h
+1>Stamping e:\18aug\vmulti5\sys\objfre_win7_amd64\amd64\vmultie.inf [Version] section with DriverVer=08/18/2012,6.1.7600.16385
+BUILD: Examining e:\18aug\vmulti5 directory tree for files to compile. (2nd Pass)
+1>Compiling e:\18aug\vmulti5\client *************
+1>'nmake.exe /nologo BUILDMSG=Stop. -i /nologo /f c:\winddk\7600.16385.1\bin\makefile.def BUILD_PASS=PASS1 NOLINK=1 NOPASS0=1 MAKEDIR_RELATIVE_TO_BASEDIR='
+1>BUILDMSG: _NT_TARGET_VERSION SET TO WS03
+1> C:\WinDDK\7600.16385.1\Bin\x86\oacr\oacrcl @e:\18aug\vmulti5\client\objfre_win7_amd64\amd64\cl.rsp
+1>Microsoft (R) C/C++ Optimizing Compiler Version 15.00.30729.207 for x64
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1>cl /Fo"e:\18aug\vmulti5\client\objfre_win7_amd64\amd64/"
+1> /FC
+1> /Iamd64\
+1> /I.
+1> /I..\inc
+1> /Ie:\18aug\vmulti5\client\objfre_win7_amd64\amd64
+1> /IC:\WinDDK\7600.16385.1\inc\api
+1> /IC:\WinDDK\7600.16385.1\inc\api
+1> /IC:\WinDDK\7600.16385.1\inc\crt
+1> /D_WIN64
+1> /D_AMD64_
+1> /DAMD64
+1> /DCONDITION_HANDLING=1
+1> /DNT_UP=1
+1> /DNT_INST=0
+1> /DWIN32=100
+1> /D_NT1X_=100
+1> /DWINNT=1
+1> /D_WIN32_WINNT=0x0502
+1> /DWINVER=0x0502
+1> /D_WIN32_IE=0x0603
+1> /DWIN32_LEAN_AND_MEAN=1
+1> /DDEVL=1
+1> /D__BUILDMACHINE__=WinDDK
+1> /DNDEBUG
+1> /D_DLL=1
+1> /D_MT=1
+1> /DNTDDI_VERSION=0x05020100
+1> /DPSAPI_VERSION=1
+1> /c
+1> /Zc:wchar_t-
+1> /Zl
+1> /Zp8
+1> /Gy
+1> /W3
+1> /WX
+1> /EHs-c-
+1> /GR-
+1> /GF
+1> /GS
+1> /Z7
+1> /Oxs
+1> /GL
+1> /Z7
+1> /DKMDF_MAJOR_VERSION_STRING=01
+1> /DKMDF_MINOR_VERSION_STRING=009
+1> /typedil-
+1> /wd4603
+1> /wd4627
+1> /FIC:\WinDDK\7600.16385.1\inc\api\warning.h
+1> .\client.c 
+1>client.c
+1> C:\WinDDK\7600.16385.1\Bin\x86\oacr\oacrlink /lib /out:e:\18aug\vmulti5\client\objfre_win7_amd64\amd64\vmultieclient.lib /IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221,4108,4088,4218,4218,4235  /WX /nodefaultlib /machine:amd64 /ltcg @e:\18aug\vmulti5\client\objfre_win7_amd64\amd64\lib.rsp
+1>Microsoft (R) Library Manager Version 9.00.30729.207
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1>e:\18aug\vmulti5\client\objfre_win7_amd64\amd64\client.obj 
+1>Compiling and Linking e:\18aug\vmulti5\hidmapper *************
+1>'nmake.exe /nologo BUILDMSG=Stop. -i BUILD_PASS=PASS2 LINKONLY=1 NOPASS0=1 MAKEDIR_RELATIVE_TO_BASEDIR='
+1> rc.exe -l 409 -DSXS_PROCESSOR_ARCHITECTURE="""AMD64"""  -DSXS_TARGET="""hidkmdf.sys"""   -DSYSTEM_COMPATIBLE_ASSEMBLY_NAME="""Microsoft.Windows.SystemCompatible"""  -DLSYSTEM_COMPATIBLE_ASSEMBLY_NAME=L"""Microsoft.Windows.SystemCompatible"""   -DSXS_ASSEMBLY_VERSION=""""""  /r /fo e:\18aug\vmulti5\hidmapper\objfre_win7_amd64\amd64\hidkmdf.res /D_WIN64 /D_AMD64_ /DAMD64   /DCONDITION_HANDLING=1 /DNT_UP=1  /DNT_INST=0 /DWIN32=100 /D_NT1X_=100 /DWINNT=1 /D_WIN32_WINNT=0x0601 /DWINVER=0x0601 /D_WIN32_IE=0x0800    /DWIN32_LEAN_AND_MEAN=1  /DDEVL=1 /D__BUILDMACHINE__=WinDDK  /DNDEBUG /D_DLL=1 /DNDEBUG  /DNTDDI_VERSION=0x06010000   /Ie:\18aug\vmulti5\hidmapper\objfre_win7_amd64\amd64 /IC:\WinDDK\7600.16385.1\inc\api /IC:\WinDDK\7600.16385.1\inc\api /IC:\WinDDK\7600.16385.1\inc\ddk /IC:\WinDDK\7600.16385.1\inc\ddk /IC:\WinDDK\7600.16385.1\inc\crt .\hidkmdf.rc
+1>Microsoft (R) Windows (R) Resource Compiler Version 6.1.6908.0
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1> C:\WinDDK\7600.16385.1\Bin\x86\oacr\oacrcl @e:\18aug\vmulti5\hidmapper\objfre_win7_amd64\amd64\cl.rsp
+1>Microsoft (R) C/C++ Optimizing Compiler Version 15.00.30729.207 for x64
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1>cl /Fo"e:\18aug\vmulti5\hidmapper\objfre_win7_amd64\amd64/"
+1> /FC
+1> /Iamd64\
+1> /I.
+1> /Ie:\18aug\vmulti5\hidmapper\objfre_win7_amd64\amd64
+1> /IC:\WinDDK\7600.16385.1\inc\api
+1> /IC:\WinDDK\7600.16385.1\inc\api
+1> /IC:\WinDDK\7600.16385.1\inc\ddk
+1> /IC:\WinDDK\7600.16385.1\inc\ddk
+1> /IC:\WinDDK\7600.16385.1\inc\crt
+1> /D_WIN64
+1> /D_AMD64_
+1> /DAMD64
+1> /DCONDITION_HANDLING=1
+1> /DNT_UP=1
+1> /DNT_INST=0
+1> /DWIN32=100
+1> /D_NT1X_=100
+1> /DWINNT=1
+1> /D_WIN32_WINNT=0x0601
+1> /DWINVER=0x0601
+1> /D_WIN32_IE=0x0800
+1> /DWIN32_LEAN_AND_MEAN=1
+1> /DDEVL=1
+1> /D__BUILDMACHINE__=WinDDK
+1> /DNDEBUG
+1> /D_DLL=1
+1> /DNDEBUG
+1> /DNTDDI_VERSION=0x06010000
+1> /c
+1> /Zc:wchar_t-
+1> /Zl
+1> /Zp8
+1> /Gy
+1> -cbstring
+1> /W3
+1> /WX
+1> /EHs-c-
+1> /GR-
+1> /GF
+1> /GS
+1> /Zi
+1> /Oxs
+1> /GL
+1> /Zi
+1> /Fde:\18aug\vmulti5\hidmapper\objfre_win7_amd64\amd64\
+1> /DKMDF_MAJOR_VERSION_STRING=01
+1> /DKMDF_MINOR_VERSION_STRING=009
+1> /typedil-
+1> /wd4603
+1> /wd4627
+1> /FIC:\WinDDK\7600.16385.1\inc\api\warning.h
+1> .\hidkmdf.c 
+1>hidkmdf.c
+1> C:\WinDDK\7600.16385.1\Bin\x86\oacr\oacrlink /out:e:\18aug\vmulti5\hidmapper\objfre_win7_amd64\amd64\hidkmdf.sys /machine:amd64 @e:\18aug\vmulti5\hidmapper\objfre_win7_amd64\amd64\lnk.rsp
+1>Microsoft (R) Incremental Linker Version 9.00.30729.207
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1>/MERGE:_PAGE=PAGE 
+1>/MERGE:_TEXT=.text 
+1>/SECTION:INIT,d 
+1>/OPT:REF 
+1>/OPT:ICF 
+1>/IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221,4108,4088,4218,4218,4235 
+1>/INCREMENTAL:NO 
+1>/release 
+1>/NODEFAULTLIB 
+1>/WX 
+1>/debug 
+1>/debugtype:cv,fixup,pdata 
+1>/version:6.1 
+1>/osversion:6.1 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\hotpatch.obj 
+1>/functionpadmin:6 
+1>/pdbcompress 
+1>/STACK:0x40000,0x1000 
+1>/driver 
+1>/base:0x10000 
+1>/subsystem:native,6.01 
+1>/entry:GsDriverEntry 
+1>/out:e:\18aug\vmulti5\hidmapper\objfre_win7_amd64\amd64\hidkmdf.sys 
+1>e:\18aug\vmulti5\hidmapper\objfre_win7_amd64\amd64\hidkmdf.res 
+1>e:\18aug\vmulti5\hidmapper\objfre_win7_amd64\amd64\hidkmdf.obj 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\BufferOverflowK.lib 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\ntoskrnl.lib 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\hal.lib 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\wmilib.lib 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\hidclass.lib 
+1>hidkmdf.obj : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
+1>Microsoft (R) Incremental Linker Version 9.00.30729.207
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1>/MERGE:_PAGE=PAGE 
+1>/MERGE:_TEXT=.text 
+1>/SECTION:INIT,d 
+1>/OPT:REF 
+1>/OPT:ICF 
+1>/IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221,4108,4088,4218,4218,4235 
+1>/INCREMENTAL:NO 
+1>/release 
+1>/NODEFAULTLIB 
+1>/WX 
+1>/debug 
+1>/debugtype:cv,fixup,pdata 
+1>/version:6.1 
+1>/osversion:6.1 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\hotpatch.obj 
+1>/functionpadmin:6 
+1>/pdbcompress 
+1>/STACK:0x40000,0x1000 
+1>/driver 
+1>/base:0x10000 
+1>/subsystem:native,6.01 
+1>/entry:GsDriverEntry 
+1>/out:e:\18aug\vmulti5\hidmapper\objfre_win7_amd64\amd64\hidkmdf.sys 
+1>e:\18aug\vmulti5\hidmapper\objfre_win7_amd64\amd64\hidkmdf.res 
+1>e:\18aug\vmulti5\hidmapper\objfre_win7_amd64\amd64\hidkmdf.obj 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\BufferOverflowK.lib 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\ntoskrnl.lib 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\hal.lib 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\wmilib.lib 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\hidclass.lib 
+1>Generating code
+1>Finished generating code
+1>Compiling and Linking e:\18aug\vmulti5\sys *************
+1>'nmake.exe /nologo BUILDMSG=Stop. -i BUILD_PASS=PASS2 LINKONLY=1 NOPASS0=1 MAKEDIR_RELATIVE_TO_BASEDIR='
+1> rc.exe -l 409 -DSXS_PROCESSOR_ARCHITECTURE="""AMD64"""  -DSXS_TARGET="""vmultie.sys"""   -DSYSTEM_COMPATIBLE_ASSEMBLY_NAME="""Microsoft.Windows.SystemCompatible"""  -DLSYSTEM_COMPATIBLE_ASSEMBLY_NAME=L"""Microsoft.Windows.SystemCompatible"""   -DSXS_ASSEMBLY_VERSION=""""""  /r /fo e:\18aug\vmulti5\sys\objfre_win7_amd64\amd64\vmultie.res /D_WIN64 /D_AMD64_ /DAMD64   /DCONDITION_HANDLING=1 /DNT_UP=1  /DNT_INST=0 /DWIN32=100 /D_NT1X_=100 /DWINNT=1 /D_WIN32_WINNT=0x0601 /DWINVER=0x0601 /D_WIN32_IE=0x0800    /DWIN32_LEAN_AND_MEAN=1  /DDEVL=1 /D__BUILDMACHINE__=WinDDK  /DNDEBUG /D_DLL=1 /DNDEBUG  /DNTDDI_VERSION=0x06010000   /I..\inc /Ie:\18aug\vmulti5\sys\objfre_win7_amd64\amd64 /IC:\WinDDK\7600.16385.1\inc\api /IC:\WinDDK\7600.16385.1\inc\api /IC:\WinDDK\7600.16385.1\inc\ddk /IC:\WinDDK\7600.16385.1\inc\ddk /IC:\WinDDK\7600.16385.1\inc\wdf\kmdf\1.9 /IC:\WinDDK\7600.16385.1\inc\crt .\vmultie.rc
+1>Microsoft (R) Windows (R) Resource Compiler Version 6.1.6908.0
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1> C:\WinDDK\7600.16385.1\Bin\x86\oacr\oacrcl @e:\18aug\vmulti5\sys\objfre_win7_amd64\amd64\cl.rsp
+1>Microsoft (R) C/C++ Optimizing Compiler Version 15.00.30729.207 for x64
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1>cl /Fo"e:\18aug\vmulti5\sys\objfre_win7_amd64\amd64/"
+1> /FC
+1> /Iamd64\
+1> /I.
+1> /I..\inc
+1> /Ie:\18aug\vmulti5\sys\objfre_win7_amd64\amd64
+1> /IC:\WinDDK\7600.16385.1\inc\api
+1> /IC:\WinDDK\7600.16385.1\inc\api
+1> /IC:\WinDDK\7600.16385.1\inc\ddk
+1> /IC:\WinDDK\7600.16385.1\inc\ddk
+1> /IC:\WinDDK\7600.16385.1\inc\wdf\kmdf\1.9
+1> /IC:\WinDDK\7600.16385.1\inc\crt
+1> /D_WIN64
+1> /D_AMD64_
+1> /DAMD64
+1> /DCONDITION_HANDLING=1
+1> /DNT_UP=1
+1> /DNT_INST=0
+1> /DWIN32=100
+1> /D_NT1X_=100
+1> /DWINNT=1
+1> /D_WIN32_WINNT=0x0601
+1> /DWINVER=0x0601
+1> /D_WIN32_IE=0x0800
+1> /DWIN32_LEAN_AND_MEAN=1
+1> /DDEVL=1
+1> /D__BUILDMACHINE__=WinDDK
+1> /DNDEBUG
+1> /D_DLL=1
+1> /DNDEBUG
+1> /DNTDDI_VERSION=0x06010000
+1> /c
+1> /Zc:wchar_t-
+1> /Zl
+1> /Zp8
+1> /Gy
+1> -cbstring
+1> /W3
+1> /WX
+1> /EHs-c-
+1> /GR-
+1> /GF
+1> /GS
+1> /Zi
+1> /Oxs
+1> /GL
+1> /Zi
+1> /Fde:\18aug\vmulti5\sys\objfre_win7_amd64\amd64\
+1> /DKMDF_MAJOR_VERSION=1
+1> /DKMDF_MINOR_VERSION=9
+1> /DKMDF_MAJOR_VERSION_STRING=01
+1> /DKMDF_MINOR_VERSION_STRING=009
+1> /typedil-
+1> /wd4603
+1> /wd4627
+1> /FIC:\WinDDK\7600.16385.1\inc\api\warning.h
+1> .\vmultie.c 
+1>vmultie.c
+1> C:\WinDDK\7600.16385.1\Bin\x86\oacr\oacrlink /out:e:\18aug\vmulti5\sys\objfre_win7_amd64\amd64\vmultie.sys /machine:amd64 @e:\18aug\vmulti5\sys\objfre_win7_amd64\amd64\lnk.rsp
+1>Microsoft (R) Incremental Linker Version 9.00.30729.207
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1>/MERGE:_PAGE=PAGE 
+1>/MERGE:_TEXT=.text 
+1>/SECTION:INIT,d 
+1>/OPT:REF 
+1>/OPT:ICF 
+1>/IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221,4108,4088,4218,4218,4235 
+1>/INCREMENTAL:NO 
+1>/release 
+1>/NODEFAULTLIB 
+1>/WX 
+1>/debug 
+1>/debugtype:cv,fixup,pdata 
+1>/version:6.1 
+1>/osversion:6.1 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\hotpatch.obj 
+1>/functionpadmin:6 
+1>/pdbcompress 
+1>/STACK:0x40000,0x1000 
+1>/driver 
+1>/base:0x10000 
+1>/subsystem:native,6.01 
+1>/entry:FxDriverEntry 
+1>/out:e:\18aug\vmulti5\sys\objfre_win7_amd64\amd64\vmultie.sys 
+1>e:\18aug\vmulti5\sys\objfre_win7_amd64\amd64\vmultie.res 
+1>e:\18aug\vmulti5\sys\objfre_win7_amd64\amd64\vmultie.obj 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\BufferOverflowK.lib 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\ntoskrnl.lib 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\hal.lib 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\wmilib.lib 
+1>C:\WinDDK\7600.16385.1\lib\wdf\kmdf\amd64\1.9\WdfLdr.lib 
+1>C:\WinDDK\7600.16385.1\lib\wdf\kmdf\amd64\1.9\WdfDriverEntry.lib 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\hidclass.lib 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\ntstrsafe.lib 
+1>vmultie.obj : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
+1>Microsoft (R) Incremental Linker Version 9.00.30729.207
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1>/MERGE:_PAGE=PAGE 
+1>/MERGE:_TEXT=.text 
+1>/SECTION:INIT,d 
+1>/OPT:REF 
+1>/OPT:ICF 
+1>/IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221,4108,4088,4218,4218,4235 
+1>/INCREMENTAL:NO 
+1>/release 
+1>/NODEFAULTLIB 
+1>/WX 
+1>/debug 
+1>/debugtype:cv,fixup,pdata 
+1>/version:6.1 
+1>/osversion:6.1 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\hotpatch.obj 
+1>/functionpadmin:6 
+1>/pdbcompress 
+1>/STACK:0x40000,0x1000 
+1>/driver 
+1>/base:0x10000 
+1>/subsystem:native,6.01 
+1>/entry:FxDriverEntry 
+1>/out:e:\18aug\vmulti5\sys\objfre_win7_amd64\amd64\vmultie.sys 
+1>e:\18aug\vmulti5\sys\objfre_win7_amd64\amd64\vmultie.res 
+1>e:\18aug\vmulti5\sys\objfre_win7_amd64\amd64\vmultie.obj 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\BufferOverflowK.lib 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\ntoskrnl.lib 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\hal.lib 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\wmilib.lib 
+1>C:\WinDDK\7600.16385.1\lib\wdf\kmdf\amd64\1.9\WdfLdr.lib 
+1>C:\WinDDK\7600.16385.1\lib\wdf\kmdf\amd64\1.9\WdfDriverEntry.lib 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\hidclass.lib 
+1>C:\WinDDK\7600.16385.1\lib\win7\amd64\ntstrsafe.lib 
+1>Generating code
+1>Finished generating code
+1>Compiling and Linking e:\18aug\vmulti5\test *************
+1>'nmake.exe /nologo BUILDMSG=Stop. -i BUILD_PASS=PASS2 LINKONLY=1 NOPASS0=1 MAKEDIR_RELATIVE_TO_BASEDIR='
+1>BUILDMSG: _NT_TARGET_VERSION SET TO WS03
+1> rc.exe -l 409 -DSXS_PROCESSOR_ARCHITECTURE="""AMD64"""  -DSXS_TARGET="""testvmultie.exe"""   -DSYSTEM_COMPATIBLE_ASSEMBLY_NAME="""Microsoft.Windows.SystemCompatible"""  -DLSYSTEM_COMPATIBLE_ASSEMBLY_NAME=L"""Microsoft.Windows.SystemCompatible"""   -DSXS_ASSEMBLY_VERSION=""""""  /r /fo e:\18aug\vmulti5\test\objfre_win7_amd64\amd64\testvmultie.res /D_WIN64 /D_AMD64_ /DAMD64   /DCONDITION_HANDLING=1 /DNT_UP=1  /DNT_INST=0 /DWIN32=100 /D_NT1X_=100 /DWINNT=1 /D_WIN32_WINNT=0x0502 /DWINVER=0x0502 /D_WIN32_IE=0x0603    /DWIN32_LEAN_AND_MEAN=1  /DDEVL=1 /D__BUILDMACHINE__=WinDDK  /DNDEBUG /D_DLL=1 /D_MT=1  /DNTDDI_VERSION=0x05020100 /DPSAPI_VERSION=1   /I..\inc /Ie:\18aug\vmulti5\test\objfre_win7_amd64\amd64 /IC:\WinDDK\7600.16385.1\inc\api /IC:\WinDDK\7600.16385.1\inc\api /IC:\WinDDK\7600.16385.1\inc\crt .\testvmultie.rc
+1>Microsoft (R) Windows (R) Resource Compiler Version 6.1.6908.0
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1> C:\WinDDK\7600.16385.1\Bin\x86\oacr\oacrcl @e:\18aug\vmulti5\test\objfre_win7_amd64\amd64\cl.rsp
+1>Microsoft (R) C/C++ Optimizing Compiler Version 15.00.30729.207 for x64
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1>cl /Fo"e:\18aug\vmulti5\test\objfre_win7_amd64\amd64/"
+1> /FC
+1> /Iamd64\
+1> /I.
+1> /I..\inc
+1> /Ie:\18aug\vmulti5\test\objfre_win7_amd64\amd64
+1> /IC:\WinDDK\7600.16385.1\inc\api
+1> /IC:\WinDDK\7600.16385.1\inc\api
+1> /IC:\WinDDK\7600.16385.1\inc\crt
+1> /D_WIN64
+1> /D_AMD64_
+1> /DAMD64
+1> /DCONDITION_HANDLING=1
+1> /DNT_UP=1
+1> /DNT_INST=0
+1> /DWIN32=100
+1> /D_NT1X_=100
+1> /DWINNT=1
+1> /D_WIN32_WINNT=0x0502
+1> /DWINVER=0x0502
+1> /D_WIN32_IE=0x0603
+1> /DWIN32_LEAN_AND_MEAN=1
+1> /DDEVL=1
+1> /D__BUILDMACHINE__=WinDDK
+1> /DNDEBUG
+1> /D_DLL=1
+1> /D_MT=1
+1> /DNTDDI_VERSION=0x05020100
+1> /DPSAPI_VERSION=1
+1> /c
+1> /Zc:wchar_t-
+1> /Zl
+1> /Zp8
+1> /Gy
+1> /W3
+1> /WX
+1> /EHs-c-
+1> /GR-
+1> /GF
+1> /GS
+1> /Zi
+1> /Oxs
+1> /GL
+1> /Zi
+1> /Fde:\18aug\vmulti5\test\objfre_win7_amd64\amd64\
+1> /DKMDF_MAJOR_VERSION_STRING=01
+1> /DKMDF_MINOR_VERSION_STRING=009
+1> /typedil-
+1> /wd4603
+1> /wd4627
+1> /FIC:\WinDDK\7600.16385.1\inc\api\warning.h
+1> .\testvmultie.c 
+1>testvmultie.c
+1> C:\WinDDK\7600.16385.1\Bin\x86\oacr\oacrlink /out:e:\18aug\vmulti5\test\objfre_win7_amd64\amd64\testvmultie.exe /machine:amd64 @e:\18aug\vmulti5\test\objfre_win7_amd64\amd64\lnk.rsp
+1>Microsoft (R) Incremental Linker Version 9.00.30729.207
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1>/MERGE:_PAGE=PAGE 
+1>/MERGE:_TEXT=.text 
+1>/SECTION:INIT,d 
+1>/OPT:REF 
+1>/OPT:ICF 
+1>/IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221,4108,4088,4218,4218,4235 
+1>/INCREMENTAL:NO 
+1>/release 
+1>/NODEFAULTLIB 
+1>/WX 
+1>/debug 
+1>/debugtype:cv,fixup,pdata 
+1>/version:6.1 
+1>/osversion:6.1 
+1>c:\winddk\7600.16385.1\lib\wnet\amd64\hotpatch.obj 
+1>/functionpadmin:6 
+1>/merge:.rdata=.text 
+1>/pdbcompress 
+1>/STACK:0x80000,0x2000 
+1>/tsaware 
+1>/dynamicbase 
+1>/subsystem:console,5.02 
+1>/base:0x400000 
+1>/entry:mainCRTStartup 
+1>e:\18aug\vmulti5\test\objfre_win7_amd64\amd64\testvmultie.res 
+1>e:\18aug\vmulti5\test\objfre_win7_amd64\amd64\testvmultie.obj 
+1>c:\winddk\7600.16385.1\lib\wnet\amd64\advapi32.lib 
+1>c:\winddk\7600.16385.1\lib\wnet\amd64\kernel32.lib 
+1>c:\winddk\7600.16385.1\lib\wnet\amd64\msvcrt_win2003.obj 
+1>C:\WinDDK\7600.16385.1\lib\crt\amd64\msvcrt.lib 
+1>c:\winddk\7600.16385.1\lib\wnet\amd64\hid.lib 
+1>c:\winddk\7600.16385.1\lib\wnet\amd64\setupapi.lib 
+1>c:\winddk\7600.16385.1\lib\wnet\amd64\comdlg32.lib 
+1>e:\18aug\vmulti5\test\..\client\objfre_win7_amd64\amd64\vmultieclient.lib 
+1>c:\winddk\7600.16385.1\lib\wnet\amd64\sehupd.lib 
+1>testvmultie.obj : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
+1>Microsoft (R) Incremental Linker Version 9.00.30729.207
+1>Copyright (C) Microsoft Corporation.  All rights reserved.
+1>/MERGE:_PAGE=PAGE 
+1>/MERGE:_TEXT=.text 
+1>/SECTION:INIT,d 
+1>/OPT:REF 
+1>/OPT:ICF 
+1>/IGNORE:4198,4010,4037,4039,4065,4070,4078,4087,4089,4221,4108,4088,4218,4218,4235 
+1>/INCREMENTAL:NO 
+1>/release 
+1>/NODEFAULTLIB 
+1>/WX 
+1>/debug 
+1>/debugtype:cv,fixup,pdata 
+1>/version:6.1 
+1>/osversion:6.1 
+1>c:\winddk\7600.16385.1\lib\wnet\amd64\hotpatch.obj 
+1>/functionpadmin:6 
+1>/merge:.rdata=.text 
+1>/pdbcompress 
+1>/STACK:0x80000,0x2000 
+1>/tsaware 
+1>/dynamicbase 
+1>/subsystem:console,5.02 
+1>/base:0x400000 
+1>/entry:mainCRTStartup 
+1>e:\18aug\vmulti5\test\objfre_win7_amd64\amd64\testvmultie.res 
+1>e:\18aug\vmulti5\test\objfre_win7_amd64\amd64\testvmultie.obj 
+1>c:\winddk\7600.16385.1\lib\wnet\amd64\advapi32.lib 
+1>c:\winddk\7600.16385.1\lib\wnet\amd64\kernel32.lib 
+1>c:\winddk\7600.16385.1\lib\wnet\amd64\msvcrt_win2003.obj 
+1>C:\WinDDK\7600.16385.1\lib\crt\amd64\msvcrt.lib 
+1>c:\winddk\7600.16385.1\lib\wnet\amd64\hid.lib 
+1>c:\winddk\7600.16385.1\lib\wnet\amd64\setupapi.lib 
+1>c:\winddk\7600.16385.1\lib\wnet\amd64\comdlg32.lib 
+1>e:\18aug\vmulti5\test\..\client\objfre_win7_amd64\amd64\vmultieclient.lib 
+1>c:\winddk\7600.16385.1\lib\wnet\amd64\sehupd.lib 
+1>Generating code
+1>Finished generating code

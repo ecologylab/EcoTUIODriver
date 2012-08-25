@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vmulticlient", "Vmulti_Client\vmulticlient.vcxproj", "{CA3F49EF-F69C-46A0-A6BF-84F477255A5C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tuio-to-Vmulti-Service-1", "Tuio-to-Vmulti-Service-1\Tuio-to-Vmulti-Service-1.vcxproj", "{F718009F-4092-412E-A8FA-327C9AB01382}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA3F49EF-F69C-46A0-A6BF-84F477255A5C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CA3F49EF-F69C-46A0-A6BF-84F477255A5C}.Debug|Win32.Build.0 = Debug|Win32
+		{CA3F49EF-F69C-46A0-A6BF-84F477255A5C}.Release|Win32.ActiveCfg = Release|Win32
+		{CA3F49EF-F69C-46A0-A6BF-84F477255A5C}.Release|Win32.Build.0 = Release|Win32
+		{F718009F-4092-412E-A8FA-327C9AB01382}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F718009F-4092-412E-A8FA-327C9AB01382}.Debug|Win32.Build.0 = Debug|Win32
+		{F718009F-4092-412E-A8FA-327C9AB01382}.Release|Win32.ActiveCfg = Release|Win32
+		{F718009F-4092-412E-A8FA-327C9AB01382}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

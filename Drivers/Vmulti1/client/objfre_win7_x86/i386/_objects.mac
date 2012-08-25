@@ -1,0 +1,16 @@
+
+
+386_OBJECTS=\
+ $(OBJ_PATH)\$O\client.obj \
+
+
+
+
+
+# lowercased
+BASEDIR=c:\winddk\7600.16385.1
+OBJECT_ROOT=c:\winddk\7600.16385.1
+MAKEDIR_LOWERCASE=e:\18aug\vmulti1\client
+OBJ_PATH=e:\18aug\vmulti1\client
+CONCURRENT_MIDL=0
+CONCURRENT_MANIFEST_BUILD=0

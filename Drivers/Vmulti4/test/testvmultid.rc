@@ -1,0 +1,13 @@
+#include <windows.h>
+
+#include <ntverp.h>
+
+#define VER_FILETYPE    VFT_APP
+#define VER_FILESUBTYPE VFT2_UNKNOWN
+#define VER_FILEDESCRIPTION_STR     "Test Program for virtual multitouch (vmultid.sys) driver"
+#define VER_INTERNALNAME_STR        "testvmultid.exe"
+#define VER_ORIGINALFILENAME_STR    "testvmultid.exe"
+
+#include <common.ver>
+
+

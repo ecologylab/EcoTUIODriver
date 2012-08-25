@@ -13,8 +13,8 @@
                 <Rectangle Height="72" HorizontalAlignment="Center" Name="rectangle" Stroke="#FF413737" VerticalAlignment="Center" Width="145" />
                 <Label HorizontalAlignment="Center" VerticalAlignment="Bottom" Name="device_name" Content=" " Width="auto" />
                 <Label HorizontalAlignment="Center" VerticalAlignment="Center" Name="text" Content=" " Width="auto" />
-                <Label HorizontalAlignment="Center" VerticalAlignment="Top" Name="primary" Content="Primary" Visibility="Hidden" Width="auto" />
-                <Label Name="Active" Content="false" Visibility="Hidden" />
+                <Label HorizontalAlignment="Center" VerticalAlignment="Top" Name="primary" Content="" Visibility="Hidden" Width="auto" />
+                <Label Name="Active" Content="false" Visibility="Hidden" Margin="0,-1,0,1" />
                
             </Grid>
         </Border>

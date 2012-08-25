@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FFC39D2E-1DAB-48B9-A73C-973F41025B30}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>TuiotoVmultiService2</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(Configuration)\..\..\..\..\Executables\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\TuioListener\TUIO;..\TuioListener\oscpack;..\inc;..\TuioListener</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\WinDDK\7600.16385.1\lib\wxp\i386;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>hid.lib;setupapi.lib;ws2_32.lib;WINMM.LIB;%(AdditionalDependencies);kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies);kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Tuio-to-Vmulti-Service-1\targetver.h" />
+    <ClInclude Include="..\TuioListener\oscpack\ip\NetworkingUtils.h" />
+    <ClInclude Include="..\TuioListener\oscpack\ip\PacketListener.h" />
+    <ClInclude Include="..\TuioListener\oscpack\ip\TimerListener.h" />
+    <ClInclude Include="..\TuioListener\oscpack\ip\UdpSocket.h" />
+    <ClInclude Include="..\TuioListener\oscpack\osc\OscException.h" />
+    <ClInclude Include="..\TuioListener\oscpack\osc\OscHostEndianness.h" />
+    <ClInclude Include="..\TuioListener\oscpack\osc\OscPacketListener.h" />
+    <ClInclude Include="..\TuioListener\oscpack\osc\OscTypes.h" />
+    <ClInclude Include="..\TuioListener\ServiceBase.h" />
+    <ClInclude Include="..\TuioListener\ServiceInstaller.h" />
+    <ClInclude Include="..\TuioListener\ThreadPool.h" />
+    <ClInclude Include="..\TuioListener\TuioDump.h" />
+    <ClInclude Include="..\TuioListener\TUIOService.h" />
+    <ClInclude Include="..\TuioListener\TUIO\TuioClient.h" />
+    <ClInclude Include="..\TuioListener\TUIO\TuioContainer.h" />
+    <ClInclude Include="..\TuioListener\TUIO\TuioCursor.h" />
+    <ClInclude Include="..\TuioListener\TUIO\TuioListener.h" />
+    <ClInclude Include="..\TuioListener\TUIO\TuioObject.h" />
+    <ClInclude Include="..\TuioListener\TUIO\TuioPoint.h" />
+    <ClInclude Include="..\TuioListener\TUIO\TuioTime.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\TuioListener\oscpack\ip\win32\NetworkingUtils.cpp" />
+    <ClCompile Include="..\TuioListener\oscpack\ip\win32\UdpSocket.cpp" />
+    <ClCompile Include="..\TuioListener\oscpack\osc\OscPrintReceivedElements.cpp" />
+    <ClCompile Include="..\TuioListener\oscpack\osc\OscReceivedElements.cpp" />
+    <ClCompile Include="..\TuioListener\oscpack\osc\OscTypes.cpp" />
+    <ClCompile Include="..\TuioListener\ServiceBase.cpp" />
+    <ClCompile Include="..\TuioListener\ServiceInstaller.cpp" />
+    <ClCompile Include="..\TuioListener\TUIOService2.cpp" />
+    <ClCompile Include="..\TuioListener\TUIO\TuioClient.cpp" />
+    <ClCompile Include="..\TuioListener\TUIO\TuioTime.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Tuio-to-Vmulti-Service-2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Vmulti_Client\vmulticlient.vcxproj">
+      <Project>{ca3f49ef-f69c-46a0-a6bf-84f477255a5c}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

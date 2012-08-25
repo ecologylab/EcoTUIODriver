@@ -60,3 +60,21 @@ C:\ecology-lab\ecologylab-WinTUIODriver-375775c\Configuration_Utility\Configurat
 C:\ecology-lab\ecologylab-WinTUIODriver-375775c\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Configuration_Utility.Properties.Resources.resources
 C:\ecology-lab\ecologylab-WinTUIODriver-375775c\Configuration_Utility\Configuration_Utility\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\ecology-lab\ecologylab-WinTUIODriver-375775c\Configuration_Utility\Configuration_Utility\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Final Project\Drivers\Executables\Configuration_Utility.exe.config
+C:\Final Project\Drivers\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Configuration_Utility.exe
+C:\Final Project\Drivers\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Configuration_Utility.pdb
+C:\Final Project\Drivers\Executables\Configuration_Utility.exe
+C:\Final Project\Drivers\Executables\Configuration_Utility.pdb
+C:\Final Project\Drivers\Configuration_Utility\Configuration_Utility\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Final Project\Drivers\Configuration_Utility\Configuration_Utility\obj\x86\Debug\MainWindow.baml
+C:\Final Project\Drivers\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Monitor.baml
+C:\Final Project\Drivers\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Sensor.baml
+C:\Final Project\Drivers\Configuration_Utility\Configuration_Utility\obj\x86\Debug\MainWindow.g.cs
+C:\Final Project\Drivers\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Monitor.g.cs
+C:\Final Project\Drivers\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Sensor.g.cs
+C:\Final Project\Drivers\Configuration_Utility\Configuration_Utility\obj\x86\Debug\App.g.cs
+C:\Final Project\Drivers\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Configuration_Utility_MarkupCompile.cache
+C:\Final Project\Drivers\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Configuration_Utility.g.resources
+C:\Final Project\Drivers\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Configuration_Utility.Properties.Resources.resources
+C:\Final Project\Drivers\Configuration_Utility\Configuration_Utility\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Final Project\Drivers\Configuration_Utility\Configuration_Utility\obj\x86\Debug\GenerateResource.write.1.tlog

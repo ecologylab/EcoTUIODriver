@@ -1,0 +1,17 @@
+﻿Build started 8/25/2012 10:51:35 AM.
+     1>Project "C:\Final Project\Drivers\Services\Service5\Vmulti_Client\vmulticlient.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\vmulticlient.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+       Lib:
+         All outputs are up-to-date.
+         vmulticlient.vcxproj -> C:\Final Project\Drivers\Services\Service5\Debug\vmulticlient.lib
+       FinalizeBuildStatus:
+         Deleting file "Debug\vmulticlient.unsuccessfulbuild".
+         Touching "Debug\vmulticlient.lastbuildstate".
+     1>Done Building Project "C:\Final Project\Drivers\Services\Service5\Vmulti_Client\vmulticlient.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.17

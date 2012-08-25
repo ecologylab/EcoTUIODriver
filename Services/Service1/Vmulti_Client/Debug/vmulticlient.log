@@ -1,0 +1,20 @@
+﻿Build started 8/25/2012 10:15:48 AM.
+     1>Project "C:\Final Project\Drivers\Services\Service1\Vmulti_Client\vmulticlient.vcxproj" on node 2 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "Debug\vmulticlient.lastbuildstate".
+       InitializeBuildStatus:
+         Creating "Debug\vmulticlient.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /IC:\WinDDK\7600.16385.1\inc\ddk /IC:\WinDDK\7600.16385.1\inc\api /IC:\WinDDK\7600.16385.1\inc\crt /I..\inc /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /X /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TC /analyze- /errorReport:prompt client.c
+         client.c
+       Lib:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"C:\Final Project\Drivers\Services\Service1\Debug\vmulticlient.lib" /NOLOGO Debug\client.obj
+         vmulticlient.vcxproj -> C:\Final Project\Drivers\Services\Service1\Debug\vmulticlient.lib
+       FinalizeBuildStatus:
+         Deleting file "Debug\vmulticlient.unsuccessfulbuild".
+         Touching "Debug\vmulticlient.lastbuildstate".
+     1>Done Building Project "C:\Final Project\Drivers\Services\Service1\Vmulti_Client\vmulticlient.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.39

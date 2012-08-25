@@ -22,7 +22,7 @@ namespace Configuration_Utility
     /// <summary>
     /// Interaction logic for Sensor.xaml
     /// </summary>
-    public partial class Sensor : System.Windows.Controls.UserControl ,TuioListener
+    public partial class Sensor : System.Windows.Controls.UserControl, TuioListener
     {
         [DllImport("kernel32.dll")]
         static extern IntPtr GetConsoleWindow();
@@ -42,7 +42,7 @@ namespace Configuration_Utility
         private object cursorSync = new object();
         private object objectSync = new object();
         Sensor Listener;
-        public string service_name="";
+        public string service_name = "";
         public Sensor()
         {
             InitializeComponent();
@@ -60,6 +60,7 @@ namespace Configuration_Utility
         Timer timer1;
         public void addtuioclient()
         {
+            client = null;
             client = new TuioClient(Convert.ToInt32(tuio_port.Text));
 
             if (client != null)
@@ -77,19 +78,21 @@ namespace Configuration_Utility
 
         public void removetuioclinet()
         {
-           
+
             if (client != null)
-            { 
-                
-               
+            {
+                // Console.WriteLine("test 5.1");
                 client.removeAllTuioListeners();
+                // Console.WriteLine("test 5.2");
                 client.disconnect();
+                // Console.WriteLine("test 5.3");
             }
+
         }
 
         public void OnTimerEvent(object source, EventArgs e)
         {
-           // Console.WriteLine(System.IO.Path.GetDirectoryName(System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName) + "\\" + service_name);
+            // Console.WriteLine(System.IO.Path.GetDirectoryName(System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName) + "\\" + service_name);
             VisualFeedback.Children.Clear();
             if (cursorList.Count > 0)
             {
@@ -110,7 +113,7 @@ namespace Configuration_Utility
                         double y;
                         if (invert_horizontal.IsChecked == true)
                         {
-                           x = VisualFeedback.Width - (current_point.getScreenX((int)VisualFeedback.Width) - VisualFeedback.Height / 100);
+                            x = VisualFeedback.Width - (current_point.getScreenX((int)VisualFeedback.Width) - VisualFeedback.Height / 100);
                         }
                         else
                         {
@@ -139,14 +142,14 @@ namespace Configuration_Utility
                         {
                         }
                         Ellipse ellipse = new Ellipse
-                            {
-                                Fill = new SolidColorBrush(Colors.CadetBlue),
-                                Width = 15,
-                                Height = 15,
-                                Opacity = 1,
-                                Margin = new Thickness(x,y, 0, 0)
-                            };
-                       
+                        {
+                            Fill = new SolidColorBrush(Colors.CadetBlue),
+                            Width = 15,
+                            Height = 15,
+                            Opacity = 1,
+                            Margin = new Thickness(x, y, 0, 0)
+                        };
+
 
                         VisualFeedback.Children.Add(ellipse);
 
@@ -163,7 +166,7 @@ namespace Configuration_Utility
                 VisualFeedback.Children.Add(l2);
                 Canvas.SetLeft(l2, 35);
                 Canvas.SetTop(l2, 130);
-                
+
             }
         }
         System.Windows.Controls.Label l2;
@@ -211,10 +214,30 @@ namespace Configuration_Utility
         {
             //Console.WriteLine("refresh "+frameTime.getTotalMilliseconds());
         }
+        public delegate void UpdateStatusBarEventHandler(bool message);
 
+        public event UpdateStatusBarEventHandler UpdateStatusBar;
+        bool t1 = true, t2 = true, t3 = true, t4 = true, t5 = true;
         private void tuio_port_TextChanged(object sender, TextChangedEventArgs e)
         {
-        
+            if (IsNumeric(tuio_port.Text) != true)
+            {
+                port_test.Content = "Only Numeric Values are allowed";
+                t1 = false;
+                if (null != UpdateStatusBar)
+                {
+                    UpdateStatusBar(false);
+                }
+            }
+            else
+            {
+                t1 = true;
+                port_test.Content = "";
+                if (null != UpdateStatusBar && t1 == true && t2 == true && t3 == true && t4 == true && t5 == true)
+                {
+                    UpdateStatusBar(true);
+                }
+            }
 
         }
 
@@ -230,12 +253,79 @@ namespace Configuration_Utility
 
         private void x_offset_TextChanged(object sender, TextChangedEventArgs e)
         {
-           
+            //    if (x_offset.Text != null)
+            //    {
+            if (IsNumeric(x_offset.Text) != true)
+            {
+                t2 = false;
+                xoffset_test.Content = "Only Numeric Value between -100 to 100 is allowed";
+                if (null != UpdateStatusBar)
+                {
+                    UpdateStatusBar(false);
+                }
+            }
+            else
+            {
+                if (Convert.ToInt32(x_offset.Text) >= -100 && Convert.ToInt32(x_offset.Text) <= 100)
+                {
+                    t2 = true;
+                    xoffset_test.Content = "";
+                    if (null != UpdateStatusBar && t1 == true && t2 == true && t3 == true && t4 == true && t5 == true)
+                    {
+                        UpdateStatusBar(true);
+                    }
+                }
+                else
+                {
+                    t2 = false;
+                    xoffset_test.Content = "Only Numeric Value between -100 to 100 is allowed";
+                    if (null != UpdateStatusBar)
+                    {
+                        UpdateStatusBar(false);
+                    }
+                }
+            }
+
+
+            //  }
         }
 
         private void y_offset_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
+            //    if (y_offset.Text != null && y_offset.Text != "")
+            //    {
+            if (IsNumeric(y_offset.Text) != true)
+            {
+                t2 = false;
+                yoffset_test.Content = "Only Numeric Value betweem -100 to 100 is allowed";
+                if (null != UpdateStatusBar)
+                {
+                    UpdateStatusBar(false);
+                }
+
+            }
+            else
+            {
+                if (Convert.ToInt32(y_offset.Text) >= -100 && Convert.ToInt32(y_offset.Text) <= 100)
+                {
+                    t2 = true;
+                    yoffset_test.Content = "";
+                    if (null != UpdateStatusBar && t1 == true && t2 == true && t3 == true && t4 == true && t5 == true)
+                    {
+                        UpdateStatusBar(true);
+                    }
+                }
+                else
+                {
+                    t2 = false;
+                    yoffset_test.Content = "Only Numeric Value betweem -100 to 100 is allowed";
+                    if (null != UpdateStatusBar)
+                    {
+                        UpdateStatusBar(false);
+                    }
+                }
+            }
+            //   }
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -256,14 +346,22 @@ namespace Configuration_Utility
             {
                 // Hide
                 ShowWindow(handle, SW_HIDE);
-           }
+            }
         }
-       
-    
 
-              
+        private bool IsNumeric(string chkNumeric)
+        {
+            int intOutVal;
+            bool isValidNumeric = false;
+            isValidNumeric = int.TryParse(chkNumeric, out intOutVal);
+            return isValidNumeric;
+        }
+
+
+
+
     }
 
 
-    
+
 }

@@ -12,14 +12,14 @@
         </Grid.ColumnDefinitions>
         <Border  Margin="5,0,5,4" Padding="2" Background="WhiteSmoke"
           BorderBrush="SteelBlue" BorderThickness="3,5,3,5" CornerRadius="3" Grid.ColumnSpan="2">
-        <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal">
                 <Border Width="20"/>
                 <StackPanel  Orientation="Vertical">
                     <StackPanel Orientation="Horizontal">
                         <Label FontSize="18" Content="TUIO Port"/>
                         <TextBox FontSize="18" ToolTip="Enter the TUIO port number and hit apply for the changes to take place" TextChanged="tuio_port_TextChanged" Name="tuio_port" DataContext="{Binding}" Width="94" />
                     </StackPanel>
-                    <Border  Height="20"/>
+                    <Label Height="28" Name="port_test" Foreground="#FFD40000" />
                     <CheckBox VerticalAlignment="Top" IsChecked="False" HorizontalAlignment="Left"  Click="invert_horizontal_Click" FontSize="18" Name="invert_horizontal">
                         <TextBlock Margin="0,-6,0,0"  Text="Invert Horizontal" />
 
@@ -28,7 +28,6 @@
                     <CheckBox HorizontalAlignment="Left" IsChecked="False" VerticalAlignment="Top" FontSize="18" Click="invert_verticle_Click"  Name="invert_verticle" Height="28" Width="159" >
                         <TextBlock Margin="0,-6,0,0"  Text="Invert Verticle" />
                     </CheckBox>
-                    <Border Height="20"/>
                     <Label Content="Configure Offset" FontSize="18"  />
                     <Border Height="10"/>
                     <StackPanel Orientation="Horizontal">
@@ -36,14 +35,14 @@
                         <TextBox TextChanged="x_offset_TextChanged" ToolTip="Enter a value between -100 to 100" Width="84" Name="x_offset" />
 
                     </StackPanel>
-                    <Border Width="20" Height="10"/>
+                    <Label Height="28" Name="xoffset_test" Foreground="#FFD40000" />
                     <StackPanel Orientation="Horizontal">
                         <Label Content="Yo" FontSize="18"  />
                         <TextBox TextChanged="y_offset_TextChanged" ToolTip="Enter a value between -100 to 100" Width="85" Name="y_offset" />
-                  </StackPanel>
-                    <Border Height="20"/>
-                    <CheckBox VerticalAlignment="Top" HorizontalAlignment="Left"  Margin="0,0,0,0"  FontSize="18"  Click="debug_Click" ToolTip="Click to See log messages" Height="41" Name="debug" Width="200">
-                    <TextBlock Margin="0,-6,0,0"  Text="Log Window" />
+                    </StackPanel>
+                    <Label Height="28" Name="yoffset_test" Foreground="#FFD40000" />
+                    <CheckBox VerticalAlignment="Top" HorizontalAlignment="Left"  Margin="0,0,0,0"  FontSize="18"  Click="debug_Click" ToolTip="Click to See log messages" Height="31" Name="debug" Width="191">
+                        <TextBlock Margin="0,-6,0,0"  Text="Log Window" />
                     </CheckBox>
                 </StackPanel>
                 <Border Width="5"/>
@@ -52,17 +51,17 @@
                     <Label Content="Live Feeback" FontSize="18" HorizontalAlignment="Center" />
                     <Label HorizontalAlignment="Center" Content="( Service Must be Stopped to see live feedback )" Height="28" Name="label1" Canvas.Left="0" Canvas.Top="0" Foreground="SteelBlue" />
                     <Border x:Name="CanvasBorder" BorderThickness="1"  BorderBrush="Black" Width="206">
- 
+
                         <Canvas Width="198" Height="160" Name="VisualFeedback">
-                            
+
                         </Canvas>
                     </Border>
-                       
-                        <Label Content=" " Name="service_status" HorizontalAlignment="Center" />
-                    
-                    
-                        <Button HorizontalAlignment="Center" ToolTip="Click to Start/Stop Service" Content="TOGGLE START/STOP SERVICE" Height="41" Name="service" Width="200" />
-                    
+
+                    <Label Content=" " Name="service_status" HorizontalAlignment="Center" />
+
+
+                    <Button HorizontalAlignment="Center" ToolTip="Click to Start/Stop Service" Content="TOGGLE START/STOP SERVICE" Height="41" Name="service" Width="200" />
+
 
                 </StackPanel>
             </StackPanel>

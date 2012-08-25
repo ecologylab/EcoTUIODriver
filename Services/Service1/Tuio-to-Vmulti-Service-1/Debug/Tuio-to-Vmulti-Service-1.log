@@ -1,0 +1,20 @@
+﻿Build started 8/25/2012 10:22:48 AM.
+     1>Project "C:\Final Project\Drivers\Services\Service1\Tuio-to-Vmulti-Service-1\Tuio-to-Vmulti-Service-1.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\Tuio-to-Vmulti-Service-1.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         All outputs are up-to-date.
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         All outputs are up-to-date.
+       Manifest:
+         All outputs are up-to-date.
+       FinalizeBuildStatus:
+         Deleting file "Debug\Tuio-to-Vmulti-Service-1.unsuccessfulbuild".
+         Touching "Debug\Tuio-to-Vmulti-Service-1.lastbuildstate".
+     1>Done Building Project "C:\Final Project\Drivers\Services\Service1\Tuio-to-Vmulti-Service-1\Tuio-to-Vmulti-Service-1.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.25
