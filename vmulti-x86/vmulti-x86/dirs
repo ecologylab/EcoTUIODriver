@@ -1,5 +1,0 @@
-DIRS= \
-     hidmapper \
-     sys       \
-     client    \
-     test

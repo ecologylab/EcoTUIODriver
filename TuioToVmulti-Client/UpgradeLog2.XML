@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
-<Properties><Property Name="Solution" Value="Tuio-To-VmultiClient">
-</Property><Property Name="Solution File" Value="C:\WinTUIODriver\WinTUIODriver\TuioToVmulti_Client\Tuio-To-VmultiClient.sln">
-</Property><Property Name="Date" Value="Tuesday, June 12, 2012">
-</Property><Property Name="Time" Value="5:51:30 AM">
-</Property><Property Name="Log Number" Value="2">
-</Property></Properties><Event ErrorLevel="3" Project="vmulticlient" Source="Vmulti_Client\vmulticlient.vcproj" Description="No Conversion Required">
-</Event></UpgradeLog>
