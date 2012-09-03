@@ -78,3 +78,38 @@ C:\Final Project\Drivers\Configuration_Utility\Configuration_Utility\obj\x86\Deb
 C:\Final Project\Drivers\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Configuration_Utility.Properties.Resources.resources
 C:\Final Project\Drivers\Configuration_Utility\Configuration_Utility\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Final Project\Drivers\Configuration_Utility\Configuration_Utility\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Executables\Configuration_Utility.exe.config
+E:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Executables\Configuration_Utility.exe
+E:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Executables\Configuration_Utility.pdb
+E:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\MainWindow.baml
+E:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Monitor.baml
+E:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Sensor.baml
+E:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\MainWindow.g.cs
+E:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Monitor.g.cs
+E:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Sensor.g.cs
+E:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\App.g.cs
+E:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Configuration_Utility_MarkupCompile.cache
+E:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Configuration_Utility.g.resources
+E:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Configuration_Utility.Properties.Resources.resources
+E:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\GenerateResource.read.1.tlog
+E:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\GenerateResource.write.1.tlog
+E:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Configuration_Utility.exe
+E:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Configuration_Utility.pdb
+C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Executables\Configuration_Utility.exe.config
+C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Executables\Configuration_Utility.exe
+C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Executables\Configuration_Utility.pdb
+C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Configuration_Utility.csprojResolveAssemblyReference.cache
+C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\MainWindow.baml
+C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Monitor.baml
+C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Sensor.baml
+C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\MainWindow.g.cs
+C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Monitor.g.cs
+C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Sensor.g.cs
+C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\App.g.cs
+C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Configuration_Utility_MarkupCompile.cache
+C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Configuration_Utility.g.resources
+C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Configuration_Utility.Properties.Resources.resources
+C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Configuration_Utility.csproj.GenerateResource.Cache
+C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Configuration_Utility.exe
+C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\Configuration_Utility.pdb

@@ -4,16 +4,16 @@
 exe
 C#
 .cs
-C:\Final Project\Drivers\Configuration_Utility\Configuration_Utility\obj\x86\Debug\
+C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\obj\x86\Debug\
 Configuration_Utility
 none
 false
 DEBUG;TRACE
-C:\Final Project\Drivers\Configuration_Utility\Configuration_Utility\App.xaml
+C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Configuration_Utility\Configuration_Utility\App.xaml
 3581358427
 
-22-1209410324
-19-163699644
+23902806905
+19-401788213
 MainWindow.xaml;Monitor.xaml;Sensor.xaml;
 
 False

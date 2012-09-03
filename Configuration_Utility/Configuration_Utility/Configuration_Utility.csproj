@@ -94,6 +94,7 @@
     <Compile Include="TUIO\TuioObject.cs" />
     <Compile Include="TUIO\TuioPoint.cs" />
     <Compile Include="TUIO\TuioTime.cs" />
+    <Compile Include="Utils\Wow.cs" />
     <Compile Include="Utils\ScreenUtil.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

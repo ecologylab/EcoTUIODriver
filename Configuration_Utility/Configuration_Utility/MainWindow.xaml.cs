@@ -923,13 +923,22 @@ namespace Configuration_Utility
         private void assign_displays_Click(object sender, RoutedEventArgs e)
         {
             ProcessStartInfo startInfo = new ProcessStartInfo();
-            startInfo.FileName = "C:\\Windows\\System32\\MultiDigiMon.exe";
-            startInfo.Arguments = "-touch";
+
+            if (Utils.Wow.Is64BitOperatingSystem)
+            {
+                startInfo.FileName = "C:\\Windows\\Sysnative\\MultiDigiMon.exe";
+            }
+            else
+            {
+                startInfo.FileName = "C:\\Windows\\System32\\MultiDigiMon.exe";
+            }
+
+            startInfo.Arguments = " -touch";
             startInfo.CreateNoWindow = true;
             startInfo.UseShellExecute = true;
+            startInfo.Verb = "runas";
 
-            startInfo.WindowStyle = ProcessWindowStyle.Hidden;
-
+            startInfo.WindowStyle = ProcessWindowStyle.Normal;
             using (Process exeProcess = Process.Start(startInfo))
             {
                 exeProcess.WaitForExit();
