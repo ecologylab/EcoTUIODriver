@@ -1,20 +1,8 @@
-﻿Build started 8/25/2012 10:22:48 AM.
-     1>Project "C:\Final Project\Drivers\Services\Service1\Tuio-to-Vmulti-Service-1\Tuio-to-Vmulti-Service-1.vcxproj" on node 2 (build target(s)).
-     1>InitializeBuildStatus:
-         Creating "Debug\Tuio-to-Vmulti-Service-1.unsuccessfulbuild" because "AlwaysCreate" was specified.
-       ClCompile:
-         All outputs are up-to-date.
-       ManifestResourceCompile:
-         All outputs are up-to-date.
-       Link:
-         All outputs are up-to-date.
-       Manifest:
-         All outputs are up-to-date.
-       FinalizeBuildStatus:
-         Deleting file "Debug\Tuio-to-Vmulti-Service-1.unsuccessfulbuild".
-         Touching "Debug\Tuio-to-Vmulti-Service-1.lastbuildstate".
-     1>Done Building Project "C:\Final Project\Drivers\Services\Service1\Tuio-to-Vmulti-Service-1\Tuio-to-Vmulti-Service-1.vcxproj" (build target(s)).
+﻿Build started 10/18/2012 5:29:37 PM.
+     1>Project "C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Services\Service1\Tuio-to-Vmulti-Service-1\Tuio-to-Vmulti-Service-1.vcxproj" on node 2 (clean target(s)).
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppClean.targets(74,5): warning : Access to the path 'C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Executables\Tuio-to-Vmulti-Service-1.exe' is denied.
+     1>Done Building Project "C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Services\Service1\Tuio-to-Vmulti-Service-1\Tuio-to-Vmulti-Service-1.vcxproj" (clean target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.25
+Time Elapsed 00:00:00.01

@@ -202,8 +202,9 @@ namespace Configuration_Utility
 
                 status = sc.Status.ToString();
             }
-            catch
+            catch (Exception e)
             {
+                Console.WriteLine(e.ToString());
                 status = "Does not exist";
             }
 
@@ -507,10 +508,13 @@ namespace Configuration_Utility
         public void adddisplays()
         {
             display_stackpanel.Children.Clear();
-           
+
+                int monWidth = 95;
+                int monHeight = 65;
+
                 Monitor1 = new Monitor();
-                Monitor1.border.Width = ScreenUtil.Screens[0].Bounds.Width / 15;
-                Monitor1.border.Height = ScreenUtil.Screens[0].Bounds.Height / 15;
+                Monitor1.border.Width = monWidth;
+                Monitor1.border.Height = monHeight;
                 Monitor1.text.Content = "1";
                 //Monitor1.device_name.Content = "1";
                 // Console.WriteLine("Primary" + ScreenUtil.Screens[1].Primary.ToString() + "Workign Area x" + ScreenUtil.Screens[1].WorkingArea.X + "Workign Area y" + ScreenUtil.Screens[1].WorkingArea.Y);
@@ -522,8 +526,8 @@ namespace Configuration_Utility
              //   Monitor1.Margin = new Thickness(ScreenUtil.Screens[0].WorkingArea.X / 10, ScreenUtil.Screens[0].WorkingArea.Y / 10, 0, 0);
 
                 Monitor2 = new Monitor();
-                Monitor2.border.Width = ScreenUtil.Screens[0].Bounds.Width / 15;
-                Monitor2.border.Height = ScreenUtil.Screens[0].Bounds.Height / 15;
+                Monitor2.border.Width = monWidth;
+                Monitor2.border.Height = monHeight;
                 Monitor2.text.Content = "2";
                 //Monitor2.device_name.Content = ScreenUtil.Screens[0].DeviceName.ToString();
                 // Console.WriteLine("Primary" + ScreenUtil.Screens[1].Primary.ToString() + "Workign Area x" + ScreenUtil.Screens[1].WorkingArea.X + "Workign Area y" + ScreenUtil.Screens[1].WorkingArea.Y);
@@ -535,8 +539,8 @@ namespace Configuration_Utility
               //  Monitor2.Margin = new Thickness(ScreenUtil.Screens[0].WorkingArea.X / 10, ScreenUtil.Screens[0].WorkingArea.Y / 10, 0, 0);
                 
                 Monitor3 = new Monitor();
-                Monitor3.border.Width = ScreenUtil.Screens[0].Bounds.Width / 15;
-                Monitor3.border.Height = ScreenUtil.Screens[0].Bounds.Height / 15;
+                Monitor3.border.Width = monWidth;
+                Monitor3.border.Height = monHeight;
                 Monitor3.text.Content = "3";
                 // Monitor3.device_name.Content = ScreenUtil.Screens[0].DeviceName.ToString();
                 // Console.WriteLine("Primary" + ScreenUtil.Screens[1].Primary.ToString() + "Workign Area x" + ScreenUtil.Screens[1].WorkingArea.X + "Workign Area y" + ScreenUtil.Screens[1].WorkingArea.Y);
@@ -548,8 +552,8 @@ namespace Configuration_Utility
              
                 
                 Monitor4 = new Monitor();
-                Monitor4.border.Width = ScreenUtil.Screens[0].Bounds.Width / 15;
-                Monitor4.border.Height = ScreenUtil.Screens[0].Bounds.Height / 15;
+                Monitor4.border.Width = monWidth;
+                Monitor4.border.Height = monHeight;
                 Monitor4.text.Content = "4";
                 //Monitor4.device_name.Content = ScreenUtil.Screens[0].DeviceName.ToString();
                 // Console.WriteLine("Primary" + ScreenUtil.Screens[1].Primary.ToString() + "Workign Area x" + ScreenUtil.Screens[1].WorkingArea.X + "Workign Area y" + ScreenUtil.Screens[1].WorkingArea.Y);
@@ -560,8 +564,8 @@ namespace Configuration_Utility
                 display_stackpanel.Children.Add(Monitor4);
              
                 Monitor5 = new Monitor();
-                Monitor5.border.Width = ScreenUtil.Screens[0].Bounds.Width / 15;
-                Monitor5.border.Height = ScreenUtil.Screens[0].Bounds.Height / 15;
+                Monitor5.border.Width = monWidth;
+                Monitor5.border.Height = monHeight;
                 Monitor5.text.Content = "5";
                 //Monitor5.device_name.Content = ScreenUtil.Screens[0].DeviceName.ToString();
                 // Console.WriteLine("Primary" + ScreenUtil.Screens[1].Primary.ToString() + "Workign Area x" + ScreenUtil.Screens[1].WorkingArea.X + "Workign Area y" + ScreenUtil.Screens[1].WorkingArea.Y);

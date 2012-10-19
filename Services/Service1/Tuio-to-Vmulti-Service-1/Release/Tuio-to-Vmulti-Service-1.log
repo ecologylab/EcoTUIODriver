@@ -1,0 +1,54 @@
+﻿Build started 10/18/2012 5:31:23 PM.
+     1>Project "C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Services\Service1\Tuio-to-Vmulti-Service-1\Tuio-to-Vmulti-Service-1.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Release\Tuio-to-Vmulti-Service-1.unsuccessfulbuild".
+       ClCompile:
+         All outputs are up-to-date.
+       ManifestResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Release\..\..\..\..\Executables\Tuio-to-Vmulti-Service-1.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\WinDDK\7600.16385.1\lib\wxp\i386 hid.lib setupapi.lib ws2_32.lib WINMM.LIB kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\Tuio-to-Vmulti-Service-1.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Executables\Tuio-to-Vmulti-Service-1.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Release\..\..\..\..\Executables\Tuio-to-Vmulti-Service-1.lib" /MACHINE:X86 "Release\Tuio-to-Vmulti-Service-1.exe.embed.manifest.res"
+         Release\NetworkingUtils.obj
+         Release\UdpSocket.obj
+         Release\OscPrintReceivedElements.obj
+         Release\OscReceivedElements.obj
+         Release\OscTypes.obj
+         Release\ServiceBase.obj
+         Release\ServiceInstaller.obj
+         Release\TUIOService1.obj
+         Release\TuioClient.obj
+         Release\TuioTime.obj
+         "Release\Tuio-to-Vmulti-Service-1.obj"
+         C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Services\Service1\Release\vmulticlient.lib
+     1>LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
+         Generating code
+         Finished generating code
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Release\Tuio-to-Vmulti-Service-1.exe.embed.manifest" /manifest "Release\Tuio-to-Vmulti-Service-1.exe.intermediate.manifest"
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Release\Tuio-to-Vmulti-Service-1.exe.embed.manifest.res" Release\Tuio-to-Vmulti-Service-1_manifest.rc 
+       LinkEmbedManifest:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Release\..\..\..\..\Executables\Tuio-to-Vmulti-Service-1.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\WinDDK\7600.16385.1\lib\wxp\i386 hid.lib setupapi.lib ws2_32.lib WINMM.LIB kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\Tuio-to-Vmulti-Service-1.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Executables\Tuio-to-Vmulti-Service-1.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Release\..\..\..\..\Executables\Tuio-to-Vmulti-Service-1.lib" /MACHINE:X86 "Release\Tuio-to-Vmulti-Service-1.exe.embed.manifest.res"
+         Release\NetworkingUtils.obj
+         Release\UdpSocket.obj
+         Release\OscPrintReceivedElements.obj
+         Release\OscReceivedElements.obj
+         Release\OscTypes.obj
+         Release\ServiceBase.obj
+         Release\ServiceInstaller.obj
+         Release\TUIOService1.obj
+         Release\TuioClient.obj
+         Release\TuioTime.obj
+         "Release\Tuio-to-Vmulti-Service-1.obj"
+         C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Services\Service1\Release\vmulticlient.lib
+     1>LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
+         Generating code
+         Finished generating code
+         Tuio-to-Vmulti-Service-1.vcxproj -> C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Services\Service1\Tuio-to-Vmulti-Service-1\Release\..\..\..\..\Executables\Tuio-to-Vmulti-Service-1.exe
+       FinalizeBuildStatus:
+         Deleting file "Release\Tuio-to-Vmulti-Service-1.unsuccessfulbuild".
+         Touching "Release\Tuio-to-Vmulti-Service-1.lastbuildstate".
+     1>Done Building Project "C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Services\Service1\Tuio-to-Vmulti-Service-1\Tuio-to-Vmulti-Service-1.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:03.11

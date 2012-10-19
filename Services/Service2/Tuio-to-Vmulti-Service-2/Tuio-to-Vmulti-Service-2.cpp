@@ -39,7 +39,7 @@
 int main(int argc, char *argv[])
 {
 	
-		wchar_t *SERVICE_NAME = L"Tuio-To-vmulti-Device12" ;
+		wchar_t *SERVICE_NAME = L"Tuio-To-vmulti-Device2" ;
 		wchar_t *SERVICE_DISPLAY_NAME = L"Tuio-To-vmulti-Device2" ;
 		if(argc > 2 && strcmp( "install", argv[1] ) == 0 )
         {
