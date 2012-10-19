@@ -2,16 +2,15 @@ EcoTUIODriver
 =============
 
 Diver to convert tuio touch events into windows touch events. Supports both Windows 7 & 8. Started as GSoC 2012 project.
+EcoTUIODriver uses the [vmulti](http://code.google.com/p/vmulti/) project.
 
 Original Authors: Rajat Goyal and Bill Hamilton
-
+Liscense: [MIT](https://github.com/ecologylab/EcoTUIODriver/blob/master/LISCENSE.txt)
 
 ##INSTALL 
+1. Download the [installer](https://github.com/downloads/ecologylab/EcoTUIODriver/EcoTuioDriver.exe)
 
-###Method 1 : 
-1.Download the [installer](https://github.com/downloads/ecologylab/EcoTUIODriver/EcoTuioDriver.exe)
-
-2.Run the installer.
+2. Run the installer.
 
 ##Configuration Utility 
 
