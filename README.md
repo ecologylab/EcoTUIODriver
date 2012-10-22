@@ -22,6 +22,3 @@ Start the service to convert TUIO events to windows touch events.
 
 EcoTUIODriver supports up to 5 TUIO sensors simultaneously on distinct UDP ports.
 Sensors may be mapped to displays by hitting the "ASSIGN DISPLAYS TO SENSORS" button, which runs a native windows mapping utility.
-
-
-*** Note: On uninstall we are currently unable to uninstall the actual virtual drivers. This has been an issue with vmulti the virtual driver that we use.
