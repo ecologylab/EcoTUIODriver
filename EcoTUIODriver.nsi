@@ -86,6 +86,7 @@ ${EndIf}
 FunctionEnd
 
 Section "Driver and Configuration Utility"
+  SetShellVarContext all  
   
   MessageBox MB_OK "Your computer might freeze several times during the installation , don't do anything | The Installer installs 5 virtual TUIO touch devices . It's important that you provide permission each time."
 
@@ -148,6 +149,8 @@ SectionEnd
 
 
 Section "uninstall"
+ SetShellVarContext all  
+
  Delete "$SMPROGRAMS\Eco TUIO Driver\EcoTUIODriver.lnk"
  Delete "$SMPROGRAMS\Eco TUIO Driver\Uninstall-EcoTuioDriver.lnk"
  RmDir  "$SMPROGRAMS\Eco TUIO Driver"
