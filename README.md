@@ -5,7 +5,7 @@ Driver to convert tuio touch events into windows touch events. Supports both Win
 EcoTUIODriver uses the [vmulti](http://code.google.com/p/vmulti/) project.
 
 Original Authors: Rajat Goyal(gyl.rajat@gmail.com) and Bill Hamilton(luin.uial@gmail.com)
-Liscense: [MIT](https://github.com/ecologylab/EcoTUIODriver/blob/master/LISCENSE.txt)
+Liscense: [LGPL](https://github.com/ecologylab/EcoTUIODriver/blob/master/LISCENSE.txt)
 
 ##INSTALL 
 1. Download the [installer](https://github.com/downloads/ecologylab/EcoTUIODriver/EcoTuioDriver.exe)
