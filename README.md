@@ -8,9 +8,9 @@ Original Authors: Rajat Goyal(gyl.rajat@gmail.com) and Bill Hamilton(luin.uial@g
 Liscense: [LGPL](https://github.com/ecologylab/EcoTUIODriver/blob/master/LISCENSE.txt)
 
 ##INSTALL 
-1. Download the [source](https://github.com/ecologylab/EcoTUIODriver/archive/master.zip).
+1. Download the [installer](https://github.com/downloads/ecologylab/EcoTUIODriver/EcoTuioDriver.exe)
 
-2. Run the installer (EcoTUIODriver.exe in top level directory).
+2. Run the installer.
 
 ##Configuration Utility 
 
