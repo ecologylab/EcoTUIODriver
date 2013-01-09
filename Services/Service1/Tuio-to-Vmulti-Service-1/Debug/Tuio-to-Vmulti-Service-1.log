@@ -1,8 +1,0 @@
-﻿Build started 10/18/2012 5:29:37 PM.
-     1>Project "C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Services\Service1\Tuio-to-Vmulti-Service-1\Tuio-to-Vmulti-Service-1.vcxproj" on node 2 (clean target(s)).
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppClean.targets(74,5): warning : Access to the path 'C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Executables\Tuio-to-Vmulti-Service-1.exe' is denied.
-     1>Done Building Project "C:\Users\ecologylab\Documents\GitHub\WinTUIODriver\Services\Service1\Tuio-to-Vmulti-Service-1\Tuio-to-Vmulti-Service-1.vcxproj" (clean target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:00.01

@@ -77,7 +77,22 @@ BYTE   reportId = REPORTID_MTOUCH;
 int port;
 string invert_x="False";
 string invert_y="False";
+string swap_xy="False";
+string x_offset="0";
+string y_offset="0";
+string xrange_min="0";
+string xrange_max="1";
+string yrange_min="0";
+string yrange_max="1";
+int xoffset=0;
+int yoffset=0;
+float xrangemin=0;
+float yrangemin=0;
+float xrangemax=1;
+float yrangemax=1;
+
 int offset=0;
+
 std::ofstream fslog("C://log.txt"); 
 map<int,float> tcur_x;
 map<int,float> tcur_y;
@@ -98,9 +113,9 @@ void TuioDump::removeTuioObject(TuioObject *tobj) {
 }
 
 void TuioDump::addTuioCursor(TuioCursor *tcur) {
-		fslog<<"touch ";
+		//fslog<<"touch ";
 			fslog<<tcur->getCursorID();
-			fslog<<" added \n";
+			//fslog<<" added \n";
 	tcur_x[tcur->getCursorID()]=tcur->getX();
 	tcur_y[tcur->getCursorID()]=tcur->getY();
 	tcur_status[tcur->getCursorID()]=MULTI_CONFIDENCE_BIT | MULTI_IN_RANGE_BIT | MULTI_TIPSWITCH_BIT;
@@ -111,9 +126,9 @@ void TuioDump::addTuioCursor(TuioCursor *tcur) {
 void TuioDump::updateTuioCursor(TuioCursor *tcur) {
 	tcur_x[tcur->getCursorID()]=tcur->getX();
 	tcur_y[tcur->getCursorID()]=tcur->getY();
-		fslog<<"touch ";
+	//	fslog<<"touch ";
 			fslog<<tcur->getCursorID();
-			fslog<<" updated \n";
+		//	fslog<<" updated \n";
 	SendHidRequests_updatetouch(vmulti,reportId,false);
 }
   
@@ -122,9 +137,9 @@ void TuioDump::removeTuioCursor(TuioCursor *tcur) {
 	cursor_id_to_remove=tcur->getCursorID();
 	tcur_x.erase(tcur->getCursorID());
 	tcur_y.erase(tcur->getCursorID());
-		fslog<<"touch ";
+		//fslog<<"touch ";
 		fslog<<tcur->getCursorID();
-		fslog<<" removed \n";
+		//fslog<<" removed \n";
 	SendHidRequests_updatetouch(vmulti,reportId,true);
 }
 
@@ -133,27 +148,76 @@ void  TuioDump::refresh(TuioTime frameTime) {
 
 float x,y;
 int i=0;
+float tmp;
 
 void SendHidRequests_updatetouch(pvmulti_client vmulti,BYTE requestType,bool remove)
 {
 	/*if(remove==false){		
 	i=0;*/
+
+
+			fslog<<" invert_x "<<invert_x;
+			fslog<<" invert_y "<<invert_y;
+fslog<<" offset_x "<<xoffset;
+fslog<<" offset_y "<<yoffset;
+fslog<<" swap_xy "<<swap_xy;
+	fslog<<" xrangemin "<<xrangemin;
+	fslog<<" yrangemin "<<xrangemin;
+	fslog<<" xrangemax "<<yrangemax;
+	fslog<<" yrangemax "<<yrangemax;
+
+
 			i=0;
 	     	int actualCount = tcur_x.size();
 			fslog<<"The no of touches is ";
 			fslog<<tcur_x.size();
 			fslog<<"\n";
+			
 			// set whatever number you want, lower than MULTI_MAX_COUNT
             if(remove == true)
 			{
 				actualCount=actualCount+1;
 			}
+
+
 			PTOUCH pTouch = (PTOUCH)malloc(actualCount * sizeof(TOUCH));
 		    for( map<int,float>::iterator ii=tcur_x.begin(); ii!=tcur_x.end(); ++ii)
             {
 				
 				x=(*ii).second;
 				y=tcur_y[(*ii).first];
+	fslog<<"x="<<x<<"y="<<y;
+	if(invert_x=="True")
+	x=1-x;
+	if(invert_y=="True")
+	y=1-y;
+	
+	
+	if(xrangemin!=0 || xrangemax!=1)
+	{
+		float xrange=xrangemax-xrangemin;
+		x=xrangemin+(xrange*x);
+		fslog<<" xrange "<<xrange;
+	}
+	if(yrangemin!=0 || yrangemax!=1)
+	{
+		float yrange=yrangemax-yrangemin;
+		y=yrangemin+(yrange*y);
+		fslog<<" yrange "<<yrange;
+	}
+	if(xoffset!=0 && yoffset!=0)
+	{
+		x=x+xoffset/100;
+		y=y+yoffset/100;
+	}
+	if(swap_xy=="True")
+	{
+		tmp=y;
+		y=x;
+		x=tmp;
+	}
+	fslog<<"x'="<<x<<"y'="<<y;
+
 				pTouch[i].ContactID = (*ii).first;
 				pTouch[i].Status = tcur_status[(*ii).first];
 				pTouch[i].XValue = USHORT(x * (int)MULTI_MAX_COORDINATE);
@@ -162,31 +226,16 @@ void SendHidRequests_updatetouch(pvmulti_client vmulti,BYTE requestType,bool rem
                 pTouch[i].Height = 30;
                 i=i+1; 
             }
-			if(remove==true){
-			 
+			if(remove==true)
+			{
 			 pTouch[i].ContactID= cursor_id_to_remove;
-			 pTouch[i].Status=0;}
+			 pTouch[i].Status=0;
+			}
 			 if (!vmulti_update_multitouch(vmulti, pTouch, actualCount,requestType,REPORTID_CONTROL))
             { 
 				 fslog<<"touch ";
 				fslog<<" failed \n";
 			}
-	//}
-	//else
-	//{
-	//	// set whatever number you want, lower than MULTI_MAX_COUNT
- //           PTOUCH pTouch = (PTOUCH)malloc(1 * sizeof(TOUCH));
-	//	    pTouch[0].ContactID= cursor_id_to_remove;
-	//		pTouch[0].Status=0;
-	//		if (!vmulti_update_multitouch(vmulti, pTouch, 1))
- //           { 
-	//		   fslog<<"touch ";
-	//			fslog<<" failed \n";
-	//		}
-	//}
-
-           
-	
 	
 }
 
@@ -298,7 +347,68 @@ void CSampleService::ServiceWorkerThread(void)
 	infile3.open ("C://Users//AppData//TUIO-To-Vmulti//Data//invertverticle1.txt");
     getline(infile3,invert_y); // Saves the line in STRING.
 	infile3.close();
-
+		
+	ifstream infile4;
+	infile4.open ("C://Users//AppData//TUIO-To-Vmulti//Data//swapxy1.txt");
+    getline(infile4,swap_xy); // Saves the line in STRING.
+	infile4.close();
+	
+	ifstream infile5;
+	infile5.open ("C://Users//AppData//TUIO-To-Vmulti//Data//xrange_min1.txt");
+    getline(infile5,xrange_min); // Saves the line in STRING.
+	infile5.close();
+	char *b=new char[xrange_min.size()+1];
+	b[xrange_min.size()]=0;
+	memcpy(b,xrange_min.c_str(),xrange_min.size());
+	xrangemin = atof( b );
+	
+	
+	ifstream infile6;
+	infile6.open ("C://Users//AppData//TUIO-To-Vmulti//Data//xrange_max1.txt");
+    getline(infile6,xrange_max); // Saves the line in STRING.
+	infile6.close();
+	char *c=new char[xrange_max.size()+1];
+	c[xrange_max.size()]=0;
+	memcpy(c,xrange_max.c_str(),xrange_max.size());
+	xrangemax= atof(c);
+	
+	
+	ifstream infile7;
+	infile7.open ("C://Users//AppData//TUIO-To-Vmulti//Data//yrange_min1.txt");
+    getline(infile7,yrange_min); // Saves the line in STRING.
+	infile7.close();
+	char *d=new char[yrange_min.size()+1];
+	d[yrange_min.size()]=0;
+	memcpy(d,yrange_min.c_str(),yrange_min.size());
+	yrangemin = atof( d );
+	
+	ifstream infile8;
+	infile8.open ("C://Users//AppData//TUIO-To-Vmulti//Data//yrange_max1.txt");
+    getline(infile8,yrange_max); // Saves the line in STRING.
+	infile8.close();
+	char *e=new char[yrange_max.size()+1];
+	e[yrange_max.size()]=0;
+	memcpy(e,yrange_max.c_str(),yrange_max.size());
+	yrangemax = atof( e );
+	
+		
+	ifstream infile9;
+	infile9.open ("C://Users//AppData//TUIO-To-Vmulti//Data//x01.txt");
+    getline(infile9,x_offset); // Saves the line in STRING.
+	infile9.close();
+	char *f=new char[x_offset.size()+1];
+	f[x_offset.size()]=0;
+	memcpy(f,x_offset.c_str(),x_offset.size());
+	xoffset = atoi( f );
+		
+	ifstream infile10;
+	infile10.open ("C://Users//AppData//TUIO-To-Vmulti//Data//y01.txt");
+    getline(infile10,y_offset); // Saves the line in STRING.
+	infile10.close();
+	char *g=new char[y_offset.size()+1];
+	g[y_offset.size()]=0;
+	memcpy(g,y_offset.c_str(),y_offset.size());
+	yoffset = atoi( g );
 
 	//ends here
 	TuioClient client(port);

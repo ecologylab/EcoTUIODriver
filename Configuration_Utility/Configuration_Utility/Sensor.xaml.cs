@@ -89,7 +89,10 @@ namespace Configuration_Utility
             }
 
         }
-
+        double xrangemin = 0;
+        double xrangemax = 1;
+        double yrangemin = 0;
+        double yrangemax = 1;
         public void OnTimerEvent(object source, EventArgs e)
         {
             // Console.WriteLine(System.IO.Path.GetDirectoryName(System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName) + "\\" + service_name);
@@ -111,6 +114,7 @@ namespace Configuration_Utility
                         }
                         double x;
                         double y;
+                      
                         if (invert_horizontal.IsChecked == true)
                         {
                             x = VisualFeedback.Width - (current_point.getScreenX((int)VisualFeedback.Width) - VisualFeedback.Height / 100);
@@ -129,6 +133,18 @@ namespace Configuration_Utility
                         }
                         try
                         {
+                            if (xrangemin != 0 || xrangemax != 1)
+                            {
+                                double xrange = xrangemax - xrangemin;
+                                x = xrangemin + (xrange * x);
+
+                            }
+                            if (yrangemin != 0 || yrangemax != 1)
+                            {
+                                double yrange = yrangemax - yrangemin;
+                                y = yrangemin + (yrange * y);
+
+                            }
                             if (Convert.ToInt32(x_offset.Text) != 0)
                             {
                                 x = x + (int)VisualFeedback.Width * Convert.ToInt32(x_offset.Text) / 100;
@@ -141,6 +157,15 @@ namespace Configuration_Utility
                         catch
                         {
                         }
+                        if (swap_xy.IsChecked == true)
+                        {
+                            double tmp = y;
+                            y = x;
+                            x = tmp;
+
+                        }
+                      
+
                         Ellipse ellipse = new Ellipse
                         {
                             Fill = new SolidColorBrush(Colors.CadetBlue),
@@ -355,6 +380,40 @@ namespace Configuration_Utility
             bool isValidNumeric = false;
             isValidNumeric = int.TryParse(chkNumeric, out intOutVal);
             return isValidNumeric;
+        }
+
+        private void x_range_textchanged(object sender, TextChangedEventArgs e)
+        {
+            Double.TryParse(xrange_min.Text,out xrangemin);
+        }
+
+        private void y_range_textchanged(object sender, TextChangedEventArgs e)
+        {
+            Double.TryParse(yrange_min.Text, out yrangemin);
+        }
+
+        private void swap_xy_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void advanced_Click(object sender, RoutedEventArgs e)
+        {
+            if (adcanced.IsChecked == true)
+                advanced_stackpanel.Visibility = Visibility.Visible;
+            else
+                advanced_stackpanel.Visibility = Visibility.Hidden;
+        }
+
+        private void x_range_textchanged2(object sender, TextChangedEventArgs e)
+        {
+    
+            Double.TryParse(xrange_max.Text,out xrangemax);
+        }
+
+        private void y_range_textchanged2(object sender, TextChangedEventArgs e)
+        {
+            Double.TryParse(yrange_max.Text, out yrangemax);
         }
 
 

@@ -77,6 +77,19 @@ BYTE   reportId = REPORTID_MTOUCH;
 int port;
 string invert_x="False";
 string invert_y="False";
+string swap_xy="False";
+string x_offset="0";
+string y_offset="0";
+string xrange_min="0";
+string xrange_max="1";
+string yrange_min="0";
+string yrange_max="1";
+int xoffset=0;
+int yoffset=0;
+float xrangemin=0;
+float yrangemin=0;
+float xrangemax=1;
+float yrangemax=1;
 int offset=0;
 std::ofstream fslog("C://log4.txt"); 
 map<int,float> tcur_x;
@@ -133,7 +146,7 @@ void  TuioDump::refresh(TuioTime frameTime) {
 
 float x,y;
 int i=0;
-
+float tmp;
 void SendHidRequests_updatetouch(pvmulti_client vmulti,BYTE requestType,bool remove)
 {
 	/*if(remove==false){		
@@ -154,6 +167,37 @@ void SendHidRequests_updatetouch(pvmulti_client vmulti,BYTE requestType,bool rem
 				
 				x=(*ii).second;
 				y=tcur_y[(*ii).first];
+				fslog<<"x="<<x<<"y="<<y;
+	if(invert_x=="True")
+	x=1-x;
+	if(invert_y=="True")
+	y=1-y;
+	
+	
+	if(xrangemin!=0 || xrangemax!=1)
+	{
+		float xrange=xrangemax-xrangemin;
+		x=xrangemin+(xrange*x);
+		fslog<<" xrange "<<xrange;
+	}
+	if(yrangemin!=0 || yrangemax!=1)
+	{
+		float yrange=yrangemax-yrangemin;
+		y=yrangemin+(yrange*y);
+		fslog<<" yrange "<<yrange;
+	}
+	if(xoffset!=0 && yoffset!=0)
+	{
+		x=x+xoffset/100;
+		y=y+yoffset/100;
+	}
+	if(swap_xy=="True")
+	{
+		tmp=y;
+		y=x;
+		x=tmp;
+	}
+	fslog<<"x'="<<x<<"y'="<<y;
 				pTouch[i].ContactID = (*ii).first;
 				pTouch[i].Status = tcur_status[(*ii).first];
 				pTouch[i].XValue = USHORT(x * (int)MULTI_MAX_COORDINATE);
@@ -285,6 +329,67 @@ void CSampleService::ServiceWorkerThread(void)
     getline(infile3,invert_y); // Saves the line in STRING.
 	infile3.close();
 
+	ifstream infile4;
+	infile4.open ("C://Users//AppData//TUIO-To-Vmulti//Data//swapxy4.txt");
+    getline(infile4,swap_xy); // Saves the line in STRING.
+	infile4.close();
+	
+	ifstream infile5;
+	infile5.open ("C://Users//AppData//TUIO-To-Vmulti//Data//xrange_min4.txt");
+    getline(infile5,xrange_min); // Saves the line in STRING.
+	infile5.close();
+	char *b=new char[xrange_min.size()+1];
+	b[xrange_min.size()]=0;
+	memcpy(b,xrange_min.c_str(),xrange_min.size());
+	xrangemin = atof( b );
+	
+	
+	ifstream infile6;
+	infile6.open ("C://Users//AppData//TUIO-To-Vmulti//Data//xrange_max4.txt");
+    getline(infile6,xrange_max); // Saves the line in STRING.
+	infile6.close();
+	char *c=new char[xrange_max.size()+1];
+	c[xrange_max.size()]=0;
+	memcpy(c,xrange_max.c_str(),xrange_max.size());
+	xrangemax= atof(c);
+	
+	
+	ifstream infile7;
+	infile7.open ("C://Users//AppData//TUIO-To-Vmulti//Data//yrange_min4.txt");
+    getline(infile7,yrange_min); // Saves the line in STRING.
+	infile7.close();
+	char *d=new char[yrange_min.size()+1];
+	d[yrange_min.size()]=0;
+	memcpy(d,yrange_min.c_str(),yrange_min.size());
+	yrangemin = atof( d );
+	
+	ifstream infile8;
+	infile8.open ("C://Users//AppData//TUIO-To-Vmulti//Data//yrange_max4.txt");
+    getline(infile8,yrange_max); // Saves the line in STRING.
+	infile8.close();
+	char *e=new char[yrange_max.size()+1];
+	e[yrange_max.size()]=0;
+	memcpy(e,yrange_max.c_str(),yrange_max.size());
+	yrangemax = atof( e );
+	
+		
+	ifstream infile9;
+	infile9.open ("C://Users//AppData//TUIO-To-Vmulti//Data//x04.txt");
+    getline(infile9,x_offset); // Saves the line in STRING.
+	infile9.close();
+	char *f=new char[x_offset.size()+1];
+	f[x_offset.size()]=0;
+	memcpy(f,x_offset.c_str(),x_offset.size());
+	xoffset = atoi( f );
+		
+	ifstream infile10;
+	infile10.open ("C://Users//AppData//TUIO-To-Vmulti//Data//y04.txt");
+    getline(infile10,y_offset); // Saves the line in STRING.
+	infile10.close();
+	char *g=new char[y_offset.size()+1];
+	g[y_offset.size()]=0;
+	memcpy(g,y_offset.c_str(),y_offset.size());
+	yoffset = atoi( g );
 
 	//ends here
 	TuioClient client(port);

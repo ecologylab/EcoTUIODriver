@@ -671,6 +671,31 @@ namespace Configuration_Utility
             System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\invertverticle3.txt", Sensor3.invert_verticle.IsChecked.ToString());
             System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\invertverticle4.txt", Sensor4.invert_verticle.IsChecked.ToString());
             System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\invertverticle5.txt", Sensor5.invert_verticle.IsChecked.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\swapxy1.txt", Sensor1.swap_xy.IsChecked.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\swapxy2.txt", Sensor2.swap_xy.IsChecked.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\swapxy3.txt", Sensor3.swap_xy.IsChecked.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\swapxy4.txt", Sensor4.swap_xy.IsChecked.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\swapxy5.txt", Sensor5.swap_xy.IsChecked.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_min1.txt", Sensor1.xrange_min.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_min2.txt", Sensor2.xrange_min.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_min3.txt", Sensor3.xrange_min.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_min4.txt", Sensor4.xrange_min.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_min5.txt", Sensor5.xrange_min.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_max1.txt", Sensor1.xrange_max.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_max2.txt", Sensor2.xrange_max.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_max3.txt", Sensor3.xrange_max.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_max4.txt", Sensor4.xrange_max.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_max5.txt", Sensor5.xrange_max.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_min1.txt", Sensor1.yrange_min.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_min2.txt", Sensor2.yrange_min.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_min3.txt", Sensor3.yrange_min.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_min4.txt", Sensor4.yrange_min.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_min5.txt", Sensor5.yrange_min.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_max1.txt", Sensor1.yrange_max.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_max2.txt", Sensor2.yrange_max.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_max3.txt", Sensor3.yrange_max.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_max4.txt", Sensor4.yrange_max.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_max5.txt", Sensor5.yrange_max.Text.ToString());
             System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\x01.txt", Sensor1.x_offset.Text);
             System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\x02.txt", Sensor2.x_offset.Text);
             System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\x03.txt", Sensor3.x_offset.Text);
@@ -733,7 +758,31 @@ namespace Configuration_Utility
             System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\y03.txt", Sensor3.y_offset.Text);
             System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\y04.txt", Sensor4.y_offset.Text);
             System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\y05.txt", Sensor5.y_offset.Text);
-          
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\swapxy1.txt", Sensor1.swap_xy.IsChecked.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\swapxy2.txt", Sensor2.swap_xy.IsChecked.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\swapxy3.txt", Sensor3.swap_xy.IsChecked.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\swapxy4.txt", Sensor4.swap_xy.IsChecked.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\swapxy5.txt", Sensor5.swap_xy.IsChecked.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_min1.txt", Sensor1.xrange_min.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_min2.txt", Sensor2.xrange_min.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_min3.txt", Sensor3.xrange_min.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_min4.txt", Sensor4.xrange_min.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_min5.txt", Sensor5.xrange_min.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_max1.txt", Sensor1.xrange_max.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_max2.txt", Sensor2.xrange_max.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_max3.txt", Sensor3.xrange_max.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_max4.txt", Sensor4.xrange_max.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_max5.txt", Sensor5.xrange_max.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_min1.txt", Sensor1.yrange_min.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_min2.txt", Sensor2.yrange_min.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_min3.txt", Sensor3.yrange_min.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_min4.txt", Sensor4.yrange_min.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_min5.txt", Sensor5.yrange_min.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_max1.txt", Sensor1.yrange_max.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_max2.txt", Sensor2.yrange_max.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_max3.txt", Sensor3.yrange_max.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_max4.txt", Sensor4.yrange_max.Text.ToString());
+            System.IO.File.WriteAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_max5.txt", Sensor5.yrange_max.Text.ToString());
             //Installs service if it's not already installed . 
             install_service(service_name, sensor.service_name, sensor.tuio_port.Text);
             
@@ -758,7 +807,53 @@ namespace Configuration_Utility
                 Sensor3.tuio_port.Text = System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\tuioport3.txt");
                 Sensor4.tuio_port.Text = System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\tuioport4.txt");
                 Sensor5.tuio_port.Text = System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\tuioport5.txt");
+                if (System.IO.File.Exists("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_min1.txt") == true)
+                {
+                    Sensor1.xrange_min.Text = System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_min1.txt");
+                    Sensor2.xrange_min.Text = System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_min2.txt");
+                    Sensor3.xrange_min.Text = System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_min3.txt");
+                    Sensor4.xrange_min.Text = System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_min4.txt");
+                    Sensor5.xrange_min.Text = System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_min5.txt");
 
+
+                    Sensor1.xrange_max.Text = System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_max1.txt");
+                    Sensor2.xrange_max.Text = System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_max2.txt");
+                    Sensor3.xrange_max.Text = System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_max3.txt");
+                    Sensor4.xrange_max.Text = System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_max4.txt");
+                    Sensor5.xrange_max.Text = System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\xrange_max5.txt");
+
+
+                    Sensor1.yrange_min.Text = System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_min1.txt");
+                    Sensor2.yrange_min.Text = System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_min2.txt");
+                    Sensor3.yrange_min.Text = System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_min3.txt");
+                    Sensor4.yrange_min.Text = System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_min4.txt");
+                    Sensor5.yrange_min.Text = System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_min5.txt");
+
+
+                    Sensor1.yrange_max.Text = System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_max1.txt");
+                    Sensor2.yrange_max.Text = System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_max2.txt");
+                    Sensor3.yrange_max.Text = System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_max3.txt");
+                    Sensor4.yrange_max.Text = System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_max4.txt");
+                    Sensor5.yrange_max.Text = System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\yrange_max5.txt");
+
+
+
+
+                    if (System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\swapxy1.txt") == "True")
+                        Sensor1.swap_xy.IsChecked = true;
+
+                    if (System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\swapxy2.txt") == "True")
+                        Sensor2.swap_xy.IsChecked = true;
+
+                    if (System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\swapxy3.txt") == "True")
+                        Sensor3.swap_xy.IsChecked = true;
+
+                    if (System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\swapxy4.txt") == "True")
+                        Sensor4.swap_xy.IsChecked = true;
+
+                    if (System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\swapxy5.txt") == "True")
+                        Sensor5.swap_xy.IsChecked = true;
+                }
                 if (System.IO.File.ReadAllText("C:\\Users\\AppData\\TUIO-To-Vmulti\\Data\\inverthorizontal1.txt") == "True")
                     Sensor1.invert_horizontal.IsChecked = true;
 
