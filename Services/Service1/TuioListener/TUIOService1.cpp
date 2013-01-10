@@ -26,6 +26,7 @@
 #include <stdlib.h>
 #include "TuioDump.h"
 #include <map>
+#include <list>
 #include "ServiceInstaller.h"
 #include "ServiceBase.h"
 #include "TUIOService.h"
@@ -70,7 +71,7 @@ CSampleService::~CSampleService(void)
     }
 }
 
-void SendHidRequests_updatetouch(pvmulti_client vmulti,BYTE requestType,bool remove);
+void SendHidRequests_updatetouch(pvmulti_client vmulti,BYTE requestType);
 
 pvmulti_client vmulti;
 BYTE   reportId = REPORTID_MTOUCH;
@@ -97,6 +98,8 @@ std::ofstream fslog("C://log.txt");
 map<int,float> tcur_x;
 map<int,float> tcur_y;
 map<int,BYTE> tcur_status;
+list<int> idsToRemove;
+
 
 void TuioDump::addTuioObject(TuioObject *tobj) {
 	std::cout << "add obj " << tobj->getSymbolID() << " (" << tobj->getSessionID() << ") "<< tobj->getX() << " " << tobj->getY() << " " << tobj->getAngle() << std::endl;
@@ -113,129 +116,102 @@ void TuioDump::removeTuioObject(TuioObject *tobj) {
 }
 
 void TuioDump::addTuioCursor(TuioCursor *tcur) {
-		//fslog<<"touch ";
-			fslog<<tcur->getCursorID();
-			//fslog<<" added \n";
+	
 	tcur_x[tcur->getCursorID()]=tcur->getX();
 	tcur_y[tcur->getCursorID()]=tcur->getY();
 	tcur_status[tcur->getCursorID()]=MULTI_CONFIDENCE_BIT | MULTI_IN_RANGE_BIT | MULTI_TIPSWITCH_BIT;
-    SendHidRequests_updatetouch(vmulti,reportId,false);
+    //SendHidRequests_updatetouch(vmulti,reportId,false);
 
 }
 
 void TuioDump::updateTuioCursor(TuioCursor *tcur) {
 	tcur_x[tcur->getCursorID()]=tcur->getX();
 	tcur_y[tcur->getCursorID()]=tcur->getY();
-	//	fslog<<"touch ";
-			fslog<<tcur->getCursorID();
-		//	fslog<<" updated \n";
-	SendHidRequests_updatetouch(vmulti,reportId,false);
+	
+	//SendHidRequests_updatetouch(vmulti,reportId,false);
 }
   
-int cursor_id_to_remove;
 void TuioDump::removeTuioCursor(TuioCursor *tcur) {
-	cursor_id_to_remove=tcur->getCursorID();
-	tcur_x.erase(tcur->getCursorID());
-	tcur_y.erase(tcur->getCursorID());
-		//fslog<<"touch ";
-		fslog<<tcur->getCursorID();
-		//fslog<<" removed \n";
-	SendHidRequests_updatetouch(vmulti,reportId,true);
+	idsToRemove.push_back(tcur->getCursorID());
+	tcur_x[tcur->getCursorID()]=tcur->getX();
+	tcur_y[tcur->getCursorID()]=tcur->getY();
+	tcur_status[tcur->getCursorID()]=0;
+	//SendHidRequests_updatetouch(vmulti,reportId,true);
 }
 
 void  TuioDump::refresh(TuioTime frameTime) {
+	SendHidRequests_updatetouch(vmulti,reportId);
+	for(list<int>::iterator i = idsToRemove.begin(); i != idsToRemove.end(); i++)
+	{
+		int idToRemove = *i;
+		tcur_x.erase(idToRemove);
+		tcur_y.erase(idToRemove);
+		tcur_status.erase(idToRemove);
+	}
+	idsToRemove.clear();
 }
 
 float x,y;
 int i=0;
 float tmp;
 
-void SendHidRequests_updatetouch(pvmulti_client vmulti,BYTE requestType,bool remove)
+void SendHidRequests_updatetouch(pvmulti_client vmulti,BYTE requestType)
 {
-	/*if(remove==false){		
-	i=0;*/
-
-
-			fslog<<" invert_x "<<invert_x;
-			fslog<<" invert_y "<<invert_y;
-fslog<<" offset_x "<<xoffset;
-fslog<<" offset_y "<<yoffset;
-fslog<<" swap_xy "<<swap_xy;
-	fslog<<" xrangemin "<<xrangemin;
-	fslog<<" yrangemin "<<xrangemin;
-	fslog<<" xrangemax "<<yrangemax;
-	fslog<<" yrangemax "<<yrangemax;
-
-
-			i=0;
-	     	int actualCount = tcur_x.size();
-			fslog<<"The no of touches is ";
-			fslog<<tcur_x.size();
-			fslog<<"\n";
+	
+	i=0;
+	int actualCount = tcur_x.size();
 			
-			// set whatever number you want, lower than MULTI_MAX_COUNT
-            if(remove == true)
-			{
-				actualCount=actualCount+1;
-			}
-
-
-			PTOUCH pTouch = (PTOUCH)malloc(actualCount * sizeof(TOUCH));
-		    for( map<int,float>::iterator ii=tcur_x.begin(); ii!=tcur_x.end(); ++ii)
-            {
+	PTOUCH pTouch = (PTOUCH)malloc(actualCount * sizeof(TOUCH));
+	for( map<int,float>::iterator ii=tcur_x.begin(); ii!=tcur_x.end(); ++ii)
+    {
 				
-				x=(*ii).second;
-				y=tcur_y[(*ii).first];
-	fslog<<"x="<<x<<"y="<<y;
-	if(invert_x=="True")
-	x=1-x;
-	if(invert_y=="True")
-	y=1-y;
+		x=(*ii).second;
+		y=tcur_y[(*ii).first];
+		
+		if(invert_x=="True")
+			x=1-x;
+		if(invert_y=="True")
+			y=1-y;
 	
 	
-	if(xrangemin!=0 || xrangemax!=1)
-	{
-		float xrange=xrangemax-xrangemin;
-		x=xrangemin+(xrange*x);
-		fslog<<" xrange "<<xrange;
-	}
-	if(yrangemin!=0 || yrangemax!=1)
-	{
-		float yrange=yrangemax-yrangemin;
-		y=yrangemin+(yrange*y);
-		fslog<<" yrange "<<yrange;
-	}
-	if(xoffset!=0 && yoffset!=0)
-	{
-		x=x+xoffset/100;
-		y=y+yoffset/100;
-	}
-	if(swap_xy=="True")
-	{
-		tmp=y;
-		y=x;
-		x=tmp;
-	}
-	fslog<<"x'="<<x<<"y'="<<y;
+		if(xrangemin!=0 || xrangemax!=1)
+		{
+			float xrange=xrangemax-xrangemin;
+			x=xrangemin+(xrange*x);
+		}
+		if(yrangemin!=0 || yrangemax!=1)
+		{
+			float yrange=yrangemax-yrangemin;
+			y=yrangemin+(yrange*y);
+		}
+		if(xoffset!=0 && yoffset!=0)
+		{
+			x=x+xoffset/100;
+			y=y+yoffset/100;
+		}
+		if(swap_xy=="True")
+		{
+			tmp=y;
+			y=x;
+			x=tmp;
+		}
+		
 
-				pTouch[i].ContactID = (*ii).first;
-				pTouch[i].Status = tcur_status[(*ii).first];
-				pTouch[i].XValue = USHORT(x * (int)MULTI_MAX_COORDINATE);
-                pTouch[i].YValue = USHORT(y * (int)MULTI_MAX_COORDINATE);
-				pTouch[i].Width = 20;
-                pTouch[i].Height = 30;
-                i=i+1; 
-            }
-			if(remove==true)
-			{
-			 pTouch[i].ContactID= cursor_id_to_remove;
-			 pTouch[i].Status=0;
-			}
-			 if (!vmulti_update_multitouch(vmulti, pTouch, actualCount,requestType,REPORTID_CONTROL))
-            { 
-				 fslog<<"touch ";
-				fslog<<" failed \n";
-			}
+		pTouch[i].ContactID = (*ii).first;
+		pTouch[i].Status = tcur_status[(*ii).first];
+		pTouch[i].XValue = USHORT(x * (int)MULTI_MAX_COORDINATE);
+        pTouch[i].YValue = USHORT(y * (int)MULTI_MAX_COORDINATE);
+		pTouch[i].Width = 20;
+        pTouch[i].Height = 30;
+        
+		i++; 
+    }
+			
+	if (!vmulti_update_multitouch(vmulti, pTouch, actualCount,requestType,REPORTID_CONTROL))
+    { 
+		fslog<<"touch ";
+		fslog<<" failed \n";
+	}
 	
 }
 

@@ -1,4 +1,4 @@
-﻿Build started 1/8/2013 5:56:59 PM.
+﻿Build started 1/9/2013 6:06:58 PM.
      1>Project "C:\Users\ecologylab\Documents\GitHub\EcoTUIODriver\Services\Service3\Vmulti_Client\vmulticlient.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Release\vmulticlient.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -15,4 +15,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.38
+Time Elapsed 00:00:00.35
