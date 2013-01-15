@@ -31,6 +31,33 @@ ShowUnInstDetails show
 !macroend
 !define NSD_GetUserData `!insertmacro NSD_GetUserData`
 
+!macro IfKeyExists ROOT MAIN_KEY KEY
+  Push $R0
+  Push $R1
+  Push $R2
+ 
+  # XXX bug if ${ROOT}, ${MAIN_KEY} or ${KEY} use $R0 or $R1
+ 
+  StrCpy $R1 "0" # loop index
+  StrCpy $R2 "0" # not found
+ 
+  ${Do}
+    EnumRegKey $R0 ${ROOT} "${MAIN_KEY}" "$R1"
+    ${If} $R0 == "${KEY}"
+      StrCpy $R2 "1" # found
+      ${Break}
+    ${EndIf}
+    IntOp $R1 $R1 + 1
+  ${LoopWhile} $R0 != ""
+ 
+  ClearErrors
+ 
+  Exch 2
+  Pop $R0
+  Pop $R1
+  Exch $R2
+!macroend
+
 ;--------------------------------
 ;Interface Configuration
 ;Header Image for the installer
@@ -86,6 +113,7 @@ ${EndIf}
 FunctionEnd
 
 Section "Driver and Configuration Utility"
+
   SetShellVarContext all  
   
   MessageBox MB_OK "Your computer might freeze several times during the installation , don't do anything | The Installer installs 5 virtual TUIO touch devices . It's important that you provide permission each time."
@@ -93,9 +121,26 @@ Section "Driver and Configuration Utility"
   SetOutPath $INSTDIR
         File /r "Drivers"
         File /r "Executables"
-        
+
+  ;install vcredist_x86 if it is not already installed
+  ;unistall path is different for win 32 & 64
+  IfFileExists $WINDIR\SYSWOW64\*.* Is64bit1 Is32bit1
+  Is32bit1:
+    !insertmacro IfKeyExists HKLM  "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall" "{F0C3E5D1-1ADE-321E-8167-68EF0DE699A5}"
+    GOTO End32Bitvs64BitCheck1
+  Is64Bit1:
+    !insertmacro IfKeyExists HKLM  "SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall" "{F0C3E5D1-1ADE-321E-8167-68EF0DE699A5}"    
+  End32Bitvs64BitCheck1:        
+  
+  Pop $R0 
+  ${If} $R0 == 0 ;Requires installation of the redistributable
+    Execwait "$INSTDIR\Executables\Vcredist_x86.exe Setup /passive"
+  ${EndIf}
+  
   WriteUninstaller "$INSTDIR\Uninstall-EcoTuioDriver.exe"
   SetOutPath "$INSTDIR\Executables"
+  
+  
   
   ;CreateShortCut "$SMPROGRAMS\Startup\WinTUIODriver.lnk" "$INSTDIR\Executables\Configuration_Utility.exe"
   CreateShortCut "$DESKTOP\EcoTUIODriver.lnk" "$INSTDIR\Executables\Configuration_Utility.exe"
