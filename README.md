@@ -24,6 +24,8 @@ EcoTUIODriver supports up to 5 TUIO sensors simultaneously on distinct UDP ports
 Sensors may be mapped to displays by hitting the "ASSIGN DISPLAYS TO SENSORS" button, which runs a native windows mapping utility.
 
 EcoTUIODriver in action:
+========================
+EcoTUIODriver is being used with CCV, Touch Frames, LeapMotion and Wii. 
 
 [ZeroTouch Windows 8](http://www.youtube.com/watch?v=VnawSjc28CI)
 
@@ -32,3 +34,5 @@ EcoTUIODriver in action:
 ["The Leap" Windows 8 touchless tests](http://www.youtube.com/watch?v=gcPFoBn_O0g)
 
 [Windows 8 + CCV 1.5 + multitouch](http://www.youtube.com/watch?v=MjLbiNKgtKs)
+
+[Touchmote](http://touchmote.codeplex.com/)
