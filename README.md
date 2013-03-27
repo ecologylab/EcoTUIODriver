@@ -23,7 +23,7 @@ Start the service to convert TUIO events to windows touch events.
 EcoTUIODriver supports up to 5 TUIO sensors simultaneously on distinct UDP ports.
 Sensors may be mapped to displays by hitting the "ASSIGN DISPLAYS TO SENSORS" button, which runs a native windows mapping utility.
 
-ECOTUIODRIVER IN ACTION:
+EcoTUIODriver in action:
 
 [ZeroTouch Windows 8](http://www.youtube.com/watch?v=VnawSjc28CI)
 
