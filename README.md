@@ -14,7 +14,7 @@ Liscense: [LGPL](https://github.com/ecologylab/EcoTUIODriver/blob/master/LISCENS
 
 ##Configuration Utility 
 
-If you used the installer, the configuration utility will automatically be added in your startmenu and desktop. Otherwise you can manually locate it at $INSALL_DIR/executables/Configuration/Configuration_Utility.exe
+If you used the installer, the configuration utility will automatically be added in your startmenu and desktop. Otherwise you can manually locate it at $INSTALL_DIR/executables/Configuration/Configuration_Utility.exe
 
 ![ "Screenshot" ](http://imageshack.us/a/img827/8/ecotuioconf.png)
 				
